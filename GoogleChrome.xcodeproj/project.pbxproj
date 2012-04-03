@@ -12,6 +12,7 @@
 		E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AAE152B5742008A0CEA /* InfoPlist.strings */; };
 		E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
 		E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
+		E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */ = {isa = PBXBuildFile; fileRef = E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -41,6 +42,9 @@
 		E15A5AB6152B5742008A0CEA /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
 		E15A5AB7152B5742008A0CEA /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		E15A5AD0152B74A1008A0CEA /* Google Chrome.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "Google Chrome.app"; path = "/Applications/Google Chrome.app"; sourceTree = "<absolute>"; };
+		E15A5AD8152B76A4008A0CEA /* QSGoogleChromeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeDefinitions.h; sourceTree = "<group>"; };
+		E15A5AD9152B7932008A0CEA /* QSGoogleChromeProxies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeProxies.h; sourceTree = "<group>"; };
+		E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeProxies.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,9 @@
 			children = (
 				E15A5AB1152B5742008A0CEA /* Configuration */,
 				E15A5AAC152B5742008A0CEA /* Supporting Files */,
+				E15A5AD8152B76A4008A0CEA /* QSGoogleChromeDefinitions.h */,
+				E15A5AD9152B7932008A0CEA /* QSGoogleChromeProxies.h */,
+				E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */,
 			);
 			path = GoogleChrome;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */,
+				E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

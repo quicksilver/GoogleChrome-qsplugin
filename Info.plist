@@ -42,6 +42,31 @@
 			<string>com.google.Chrome</string>
 		</array>
 	</dict>
+	<key>QSRegistration</key>
+	<dict>
+		<key>QSActionProviders</key>
+		<dict>
+			<key>QSGoogleChromeProxies</key>
+			<string>QSGoogleChromeProxies</string>
+		</dict>
+		<key>QSProxies</key>
+		<dict>
+			<key>QSGoogleChromeFrontPageProxy</key>
+			<dict>
+				<key>icon</key>
+				<string>com.google.Chrome</string>
+				<key>name</key>
+				<string>Current Web Page (Chrome)</string>
+				<key>providerClass</key>
+				<string>QSGoogleChromeProxies</string>
+				<key>types</key>
+				<array>
+					<string>Apple URL pasteboard type</string>
+					<string>NSStringPboardType</string>
+				</array>
+			</dict>
+		</dict>
+	</dict>
 	<key>QSRequirements</key>
 	<dict>
 		<key>bundles</key>
