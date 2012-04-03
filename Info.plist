@@ -17,27 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>QSActions</key>
-	<dict>
-		<key>GoogleChromeExampleAction</key>
-		<dict>
-			<key>actionClass</key>
-			<string>QSGoogleChromeActionProvider</string>
-			<key>actionSelector</key>
-			<string>performActionOnObject:</string>
-			<key>directTypes</key>
-			<array>
-				<string>QSGoogleChromeType</string>
-			</array>
-			<key>icon</key>
-			<string>ToolbarAdvanced</string>
-		</dict>
-	</dict>
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
@@ -45,208 +29,30 @@
 		<key>categories</key>
 		<array>
 			<string>Applications</string>
+			<string>Web</string>
 		</array>
 		<key>description</key>
-		<string>One-line summary for this plug-in</string>
+		<string>Access to information and functionality in the Google Chrome web browser</string>
 		<key>extendedDescription</key>
-		<string>HTML formatted documentation for this plug-in.</string>
+		<string>&lt;h2 id=&quot;quicksilver-google-chrome-plugin&quot;&gt;Quicksilver Google Chrome plugin&lt;/h2&gt;</string>
 		<key>icon</key>
-		<string>KEXT</string>
+		<string>com.google.Chrome</string>
+		<key>relatedBundles</key>
+		<array>
+			<string>com.google.Chrome</string>
+		</array>
 	</dict>
-	<key>QSPresetAdditionsTemplate</key>
-	<array>
-		<dict>
-			<key>ID</key>
-			<string>QSPresetGoogleChromeGroup</string>
-			<key>children</key>
-			<array>
-				<dict>
-					<key>ID</key>
-					<string>QSPresetGoogleChromeExample</string>
-					<key>name</key>
-					<string>Items from GoogleChrome</string>
-					<key>source</key>
-					<string>QSGoogleChromeSource</string>
-				</dict>
-			</array>
-			<key>icon</key>
-			<string>KEXT</string>
-			<key>name</key>
-			<string>GoogleChrome Presets</string>
-			<key>source</key>
-			<string>QSGroupObjectSource</string>
-		</dict>
-	</array>
-	<key>QSRegistration</key>
+	<key>QSRequirements</key>
 	<dict>
-		<key>QSActionProviders</key>
-		<dict>
-			<key>QSGoogleChromeActionProvider</key>
-			<string>QSGoogleChromeActionProvider</string>
-		</dict>
-		<key>QSApplicationActionsTemplate</key>
-		<dict>
-			<key>com.domain.application</key>
-			<dict>
-				<key>GoogleChromeExampleCommand</key>
-				<dict>
-					<key>actionClass</key>
-					<string>QSGoogleChromeActionProvider</string>
-					<key>command</key>
-					<string>GoogleChromeExampleCommand</string>
-					<key>name</key>
-					<string>Application Action Example</string>
-				</dict>
-			</dict>
-		</dict>
-		<key>QSBundleChildHandlers</key>
-		<dict>
-			<key>QSGoogleChromeType</key>
-			<string>QSGoogleChromeSource</string>
-		</dict>
-		<key>QSBundleChildHandlersTemplate</key>
-		<dict>
-			<key>com.domain.application</key>
-			<string>QSGoogleChromeSource</string>
-		</dict>
-		<key>QSCommandsTemplate</key>
-		<dict>
-			<key>GoogleChromeExampleCommand</key>
-			<dict>
-				<key>command</key>
-				<dict>
-					<key>actionID</key>
-					<string>QSObjCSendMessageAction</string>
-					<key>directArchive</key>
-					<dict>
-						<key>data</key>
-						<dict>
-							<key>qs.action</key>
-							<dict>
-								<key>actionClass</key>
-								<string>QSGoogleChromeActionProvider</string>
-								<key>actionSelector</key>
-								<string>someSelector</string>
-								<key>icon</key>
-								<string>defaultAction</string>
-								<key>name</key>
-								<string>Do Something</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>directID</key>
-					<string>GoogleChromeInternalCommand</string>
-				</dict>
-			</dict>
-		</dict>
-		<key>QSObjectHandlers</key>
-		<dict>
-			<key>QSGoogleChromeType</key>
-			<string>QSGoogleChromeSource</string>
-		</dict>
-		<key>QSObjectSources</key>
-		<dict>
-			<key>QSGoogleChromeSource</key>
-			<string>QSGoogleChromeSource</string>
-		</dict>
-		<key>QSPreferencePanesTemplate</key>
-		<dict>
-			<key>GoogleChromePrefPaneTemplate</key>
-			<dict>
-				<key>class</key>
-				<string>GoogleChromePrefPane</string>
-				<key>description</key>
-				<string>Preferences</string>
-				<key>icon</key>
-				<string>KEXT</string>
-				<key>name</key>
-				<string>GoogleChrome</string>
-			</dict>
-		</dict>
-		<key>QSProxiesTemplate</key>
-		<dict>
-			<key>GoogleChromeSomeProxy</key>
-			<dict>
-				<key>icon</key>
-				<string>GenericDocumentIcon</string>
-				<key>name</key>
-				<string>GoogleChrome Proxy</string>
-				<key>providerClass</key>
-				<string>QSGoogleChromeSource</string>
-				<key>types</key>
-				<array>
-					<string>QSGoogleChromeType</string>
-				</array>
-			</dict>
-		</dict>
-		<key>QSTriggerEventsTemplate</key>
-		<dict>
-			<key>GoogleChromeSomeEvent</key>
-			<dict>
-				<key>icon</key>
-				<string>KEXT</string>
-				<key>name</key>
-				<string>Do something in response to this event</string>
-				<key>provider</key>
-				<string>QSGoogleChromeSource</string>
-			</dict>
-		</dict>
-		<key>QSTriggerSetsTemplates</key>
-		<dict>
-			<key>GoogleChromeTriggers</key>
-			<dict>
-				<key>icon</key>
-				<string>KEXT</string>
-				<key>name</key>
-				<string>GoogleChrome</string>
-			</dict>
-		</dict>
-		<key>QSTypeDefinitions</key>
-		<dict>
-			<key>QSGoogleChromeType</key>
-			<dict>
-				<key>icon</key>
-				<string>GenericDocumentIcon</string>
-				<key>name</key>
-				<string>GoogleChrome Object</string>
-			</dict>
-		</dict>
-	</dict>
-	<key>QSRequirementsTemplate</key>
-	<dict>
-		<key>plugins</key>
+		<key>bundles</key>
 		<array>
 			<dict>
 				<key>id</key>
-				<string>com.qsapp.Another.PlugIn</string>
+				<string>com.google.Chrome</string>
 				<key>name</key>
-				<string>Another Plug-in</string>
+				<string>Google Chrome</string>
 			</dict>
 		</array>
 	</dict>
-	<key>QSTriggerAdditionsTemplate</key>
-	<array>
-		<dict>
-			<key>ID</key>
-			<string>GoogleChromeTrigger</string>
-			<key>command</key>
-			<string>GoogleChromeExampleCommand</string>
-			<key>defaults</key>
-			<dict>
-				<key>characters</key>
-				<string>x</string>
-				<key>keyCode</key>
-				<integer>124</integer>
-				<key>modifiers</key>
-				<integer>9961768</integer>
-				<key>type</key>
-				<string>QSHotKeyTrigger</string>
-			</dict>
-			<key>name</key>
-			<string>Example Trigger</string>
-			<key>set</key>
-			<string>GoogleChrome</string>
-		</dict>
-	</array>
 </dict>
 </plist>

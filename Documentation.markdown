@@ -1,0 +1,1 @@
+## Quicksilver Google Chrome plugin ##
