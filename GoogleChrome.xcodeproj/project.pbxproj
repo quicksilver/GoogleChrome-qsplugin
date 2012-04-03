@@ -10,7 +10,23 @@
 		E15A5AA8152B5742008A0CEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA7152B5742008A0CEA /* Cocoa.framework */; };
 		E15A5AAA152B5742008A0CEA /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */; };
 		E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AAE152B5742008A0CEA /* InfoPlist.strings */; };
+		E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
+		E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		E15A5AD7152B7556008A0CEA /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleChrome.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,7 @@
 		E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
 		E15A5AB6152B5742008A0CEA /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
 		E15A5AB7152B5742008A0CEA /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		E15A5AD0152B74A1008A0CEA /* Google Chrome.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "Google Chrome.app"; path = "/Applications/Google Chrome.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +59,7 @@
 		E15A5A98152B5742008A0CEA = {
 			isa = PBXGroup;
 			children = (
+				E15A5AD0152B74A1008A0CEA /* Google Chrome.app */,
 				E15A5AAB152B5742008A0CEA /* GoogleChrome */,
 				E15A5AA6152B5742008A0CEA /* Frameworks */,
 				E15A5AA5152B5742008A0CEA /* Products */,
@@ -110,6 +128,7 @@
 				E15A5AA2152B5742008A0CEA /* ShellScript */,
 			);
 			buildRules = (
+				E15A5AD7152B7556008A0CEA /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -150,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */,
+				E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
