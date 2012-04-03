@@ -1,0 +1,250 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E15A5AA8152B5742008A0CEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA7152B5742008A0CEA /* Cocoa.framework */; };
+		E15A5AAA152B5742008A0CEA /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */; };
+		E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AAE152B5742008A0CEA /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleChrome.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15A5AA7152B5742008A0CEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		E15A5AAD152B5742008A0CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		E15A5AAF152B5742008A0CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E15A5AB2152B5742008A0CEA /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		E15A5AB3152B5742008A0CEA /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		E15A5AB4152B5742008A0CEA /* Developer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
+		E15A5AB6152B5742008A0CEA /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
+		E15A5AB7152B5742008A0CEA /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E15A5AA0152B5742008A0CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15A5AA8152B5742008A0CEA /* Cocoa.framework in Frameworks */,
+				E15A5AAA152B5742008A0CEA /* ScriptingBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E15A5A98152B5742008A0CEA = {
+			isa = PBXGroup;
+			children = (
+				E15A5AAB152B5742008A0CEA /* GoogleChrome */,
+				E15A5AA6152B5742008A0CEA /* Frameworks */,
+				E15A5AA5152B5742008A0CEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E15A5AA5152B5742008A0CEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E15A5AA6152B5742008A0CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15A5AA7152B5742008A0CEA /* Cocoa.framework */,
+				E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E15A5AAB152B5742008A0CEA /* GoogleChrome */ = {
+			isa = PBXGroup;
+			children = (
+				E15A5AB1152B5742008A0CEA /* Configuration */,
+				E15A5AAC152B5742008A0CEA /* Supporting Files */,
+			);
+			path = GoogleChrome;
+			sourceTree = "<group>";
+		};
+		E15A5AAC152B5742008A0CEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E15A5AAD152B5742008A0CEA /* Info.plist */,
+				E15A5AAE152B5742008A0CEA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E15A5AB1152B5742008A0CEA /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E15A5AB2152B5742008A0CEA /* Common.xcconfig */,
+				E15A5AB3152B5742008A0CEA /* Debug.xcconfig */,
+				E15A5AB4152B5742008A0CEA /* Developer.xcconfig */,
+				E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */,
+				E15A5AB6152B5742008A0CEA /* Quicksilver.pch */,
+				E15A5AB7152B5742008A0CEA /* Release.xcconfig */,
+			);
+			name = Configuration;
+			path = /tmp/QS/Configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E15A5AA3152B5742008A0CEA /* GoogleChrome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E15A5AC3152B5742008A0CEA /* Build configuration list for PBXNativeTarget "GoogleChrome" */;
+			buildPhases = (
+				E15A5A9F152B5742008A0CEA /* Sources */,
+				E15A5AA0152B5742008A0CEA /* Frameworks */,
+				E15A5AA1152B5742008A0CEA /* Resources */,
+				E15A5AA2152B5742008A0CEA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleChrome;
+			productName = GoogleChrome;
+			productReference = E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E15A5A9A152B5742008A0CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = stdin.se;
+			};
+			buildConfigurationList = E15A5A9D152B5742008A0CEA /* Build configuration list for PBXProject "GoogleChrome" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E15A5A98152B5742008A0CEA;
+			productRefGroup = E15A5AA5152B5742008A0CEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E15A5AA3152B5742008A0CEA /* GoogleChrome */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E15A5AA1152B5742008A0CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E15A5AA2152B5742008A0CEA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/GoogleChrome/bltrversion\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E15A5A9F152B5742008A0CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E15A5AAE152B5742008A0CEA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E15A5AAF152B5742008A0CEA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E15A5AC1152B5742008A0CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15A5AB3152B5742008A0CEA /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E15A5AC2152B5742008A0CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15A5AB7152B5742008A0CEA /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E15A5AC4152B5742008A0CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E15A5AC5152B5742008A0CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E15A5A9D152B5742008A0CEA /* Build configuration list for PBXProject "GoogleChrome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E15A5AC1152B5742008A0CEA /* Debug */,
+				E15A5AC2152B5742008A0CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E15A5AC3152B5742008A0CEA /* Build configuration list for PBXNativeTarget "GoogleChrome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E15A5AC4152B5742008A0CEA /* Debug */,
+				E15A5AC5152B5742008A0CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E15A5A9A152B5742008A0CEA /* Project object */;
+}
