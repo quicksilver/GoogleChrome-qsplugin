@@ -80,6 +80,11 @@
 				</array>
 			</dict>
 		</dict>
+		<key>QSWebBrowserMediators</key>
+		<dict>
+			<key>com.google.Chrome</key>
+			<string>QSGoogleChromeActions</string>
+		</dict>
 	</dict>
 	<key>QSRequirements</key>
 	<dict>
