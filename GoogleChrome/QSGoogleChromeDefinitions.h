@@ -10,3 +10,4 @@
 
 // Proxies
 #define kQSGoogleChromeFrontPageProxy @"QSGoogleChromeFrontPageProxy"
+#define kQSGoogleChromeSearchCurrentSiteProxy @"QSGoogleChromeSearchCurrentSiteProxy"

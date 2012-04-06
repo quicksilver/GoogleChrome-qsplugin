@@ -12,17 +12,21 @@
 
 
 - (id)resolveProxyObject:(id)proxy {
-    if ([[proxy identifier] isEqualToString:kQSGoogleChromeFrontPageProxy]) {
-        if (QSAppIsRunning(kQSGoogleChromeBundle)) {
-            
-            GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
-            GoogleChromeTab *currentTab = [[[chrome windows] objectAtIndex:0] activeTab];
-            
-            if (currentTab.URL) {
-                return [QSObject URLObjectWithURL:currentTab.URL title:currentTab.title];
-            }
-        }
+    
+    if (QSAppIsRunning(kQSGoogleChromeBundle)) {
+        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+        GoogleChromeTab *currentTab = [[[chrome windows] objectAtIndex:0] activeTab];
         
+        NSString *identifier = [proxy identifier];
+        
+        if ([identifier isEqualToString:kQSGoogleChromeFrontPageProxy] && currentTab.URL) {
+            return [QSObject URLObjectWithURL:currentTab.URL title:currentTab.title];
+        } else if ([identifier isEqualToString:kQSGoogleChromeSearchCurrentSiteProxy] && currentTab.URL) {
+            NSURL *currentURL = [NSURL URLWithString:currentTab.URL];
+            NSString *searchShortcut = [NSString stringWithFormat:@"http://www.google.com/search?q=*** site:%@", 
+                                        [currentURL host]];
+            return [QSObject URLObjectWithURL:searchShortcut title:nil];
+        }
     }
     
     return nil;
@@ -30,9 +34,15 @@
 
 
 - (NSString *)detailsOfObject:(QSObject *)object {
-    if ([[object identifier] isEqualToString:kQSGoogleChromeFrontPageProxy]) {
+    
+    NSString *identifier = [object identifier];
+    
+    if ([identifier isEqualToString:kQSGoogleChromeFrontPageProxy]) {
         return @"The URL of the page open in Chrome";
+    } else if ([identifier isEqualToString:kQSGoogleChromeSearchCurrentSiteProxy]) {
+        return @"Search the site open in Chrome";
     }
+    
     return nil;
 }
 

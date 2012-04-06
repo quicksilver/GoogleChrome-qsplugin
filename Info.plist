@@ -65,6 +65,20 @@
 					<string>NSStringPboardType</string>
 				</array>
 			</dict>
+			<key>QSGoogleChromeSearchCurrentSiteProxy</key>
+			<dict>
+				<key>icon</key>
+				<string>com.google.Chrome</string>
+				<key>name</key>
+				<string>Current Website (Chrome)</string>
+				<key>providerClass</key>
+				<string>QSGoogleChromeProxies</string>
+				<key>types</key>
+				<array>
+					<string>Apple URL pasteboard type</string>
+					<string>NSStringPboardType</string>
+				</array>
+			</dict>
 		</dict>
 	</dict>
 	<key>QSRequirements</key>
