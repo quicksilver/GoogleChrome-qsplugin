@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "QSGoogleChromeDefinitions.h"
-#import "Google Chrome.h"
 
 @interface QSGoogleChromeProxies : NSObject <QSProxyObjectProvider>
 @end

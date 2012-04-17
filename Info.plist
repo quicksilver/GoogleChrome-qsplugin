@@ -49,6 +49,16 @@
 			<key>QSGoogleChromeProxies</key>
 			<string>QSGoogleChromeProxies</string>
 		</dict>
+		<key>QSBundleChildHandlers</key>
+		<dict>
+			<key>com.google.Chrome</key>
+			<string>QSGoogleChromeObjectSource</string>
+		</dict>
+		<key>QSObjectHandlers</key>
+		<dict>
+			<key>com.google.Chrome.openPages</key>
+			<string>QSGoogleChromeObjectSource</string>
+		</dict>
 		<key>QSProxies</key>
 		<dict>
 			<key>QSGoogleChromeFrontPageProxy</key>
