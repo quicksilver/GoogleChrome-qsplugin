@@ -11,6 +11,9 @@
 @implementation QSGoogleChromeActions
 
 
+/*
+ Runs javascript in the current tab, required by the interface for web browser mediators
+ */
 - (void)performJavaScript:(NSString *)jScript {
     GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
     GoogleChromeTab *currentTab = [[[chrome windows] objectAtIndex:0] activeTab];

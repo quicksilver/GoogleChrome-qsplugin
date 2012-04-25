@@ -11,6 +11,10 @@
 @implementation QSGoogleChromeProxies
 
 
+/*
+ Provides proxy objects for the current front page in Chrome, both as an url
+ and as a search alternative.
+ */
 - (id)resolveProxyObject:(id)proxy {
     
     if (QSAppIsRunning(kQSGoogleChromeBundle)) {
@@ -33,6 +37,9 @@
 }
 
 
+/*
+ Sets the details for the current front page proxies
+ */
 - (NSString *)detailsOfObject:(QSObject *)object {
     
     NSString *identifier = [object identifier];
