@@ -58,6 +58,8 @@
 		<dict>
 			<key>com.google.Chrome.openPages</key>
 			<string>QSGoogleChromeObjectSource</string>
+			<key>com.google.Chrome.bookmarkFolder</key>
+			<string>QSGoogleChromeObjectSource</string>
 		</dict>
 		<key>QSProxies</key>
 		<dict>

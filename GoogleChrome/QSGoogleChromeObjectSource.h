@@ -8,9 +8,13 @@
 
 #import <QSCore/QSCore.h>
 #import "QSGoogleChromeDefinitions.h"
+#import "QSGoogleChromeBookmarksParser.h"
 
 @interface QSGoogleChromeObjectSource : QSObjectSource
 
-- (BOOL) loadChildrenForObject:(QSObject *)object;
+- (BOOL)loadChildrenForObject:(QSObject *)object;
+- (void)setQuickIconForObject:(QSObject *)object;
+- (BOOL)objectHasChildren:(QSObject *)object;
+- (NSString *)detailsOfObject:(QSObject *)object;
 
 @end

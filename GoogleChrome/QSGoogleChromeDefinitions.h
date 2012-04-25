@@ -10,9 +10,12 @@
 
 #define kQSGoogleChromeBundle @"com.google.Chrome"
 
+#define kQSGoogleChromeBookmarksFile @"~/Library/Application Support/Google/Chrome/Default/Bookmarks"
+
 // Proxies
 #define kQSGoogleChromeFrontPageProxy @"QSGoogleChromeFrontPageProxy"
 #define kQSGoogleChromeSearchCurrentSiteProxy @"QSGoogleChromeSearchCurrentSiteProxy"
 
 // Child objects
 #define kQSGoogleChromeOpenWebPages @"com.google.Chrome.openPages"
+#define kQSGoogleChromeBookmarkFolder @"com.google.Chrome.bookmarkFolder"

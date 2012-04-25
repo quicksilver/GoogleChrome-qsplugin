@@ -15,6 +15,10 @@
 		E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
 		E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
 		E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */ = {isa = PBXBuildFile; fileRef = E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */; };
+		E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = E161D1B315470C8C0045A22A /* CHANGELOG.md */; };
+		E161D1B815470C8C0045A22A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E161D1B515470C8C0045A22A /* JSONKit.m */; };
+		E161D1B915470C8C0045A22A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E161D1B615470C8C0045A22A /* README.md */; };
+		E161D1BD154868770045A22A /* QSGoogleChromeBookmarksParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -36,7 +40,7 @@
 		E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeActions.m; sourceTree = "<group>"; };
 		E14F9687152EDF4600DBA105 /* QSGoogleChromeObjectSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeObjectSource.h; sourceTree = "<group>"; };
 		E14F9688152EDF4600DBA105 /* QSGoogleChromeObjectSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeObjectSource.m; sourceTree = "<group>"; };
-		E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleChrome.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15A5AA4152B5742008A0CEA /* GoogleChrome.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoogleChrome.bundle; path = GoogleChrome.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15A5AA7152B5742008A0CEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		E15A5AAD152B5742008A0CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -51,6 +55,12 @@
 		E15A5AD8152B76A4008A0CEA /* QSGoogleChromeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeDefinitions.h; sourceTree = "<group>"; };
 		E15A5AD9152B7932008A0CEA /* QSGoogleChromeProxies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeProxies.h; sourceTree = "<group>"; };
 		E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeProxies.m; sourceTree = "<group>"; };
+		E161D1B315470C8C0045A22A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		E161D1B415470C8C0045A22A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		E161D1B515470C8C0045A22A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		E161D1B615470C8C0045A22A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E161D1BB154868770045A22A /* QSGoogleChromeBookmarksParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeBookmarksParser.h; sourceTree = "<group>"; };
+		E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeBookmarksParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 			children = (
 				E15A5AD0152B74A1008A0CEA /* Google Chrome.app */,
 				E15A5AAB152B5742008A0CEA /* GoogleChrome */,
+				E161D1B215470C8C0045A22A /* JSONKit */,
 				E15A5AA6152B5742008A0CEA /* Frameworks */,
 				E15A5AA5152B5742008A0CEA /* Products */,
 			);
@@ -79,7 +90,7 @@
 		E15A5AA5152B5742008A0CEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */,
+				E15A5AA4152B5742008A0CEA /* GoogleChrome.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +116,8 @@
 				E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */,
 				E14F9687152EDF4600DBA105 /* QSGoogleChromeObjectSource.h */,
 				E14F9688152EDF4600DBA105 /* QSGoogleChromeObjectSource.m */,
+				E161D1BB154868770045A22A /* QSGoogleChromeBookmarksParser.h */,
+				E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */,
 			);
 			path = GoogleChrome;
 			sourceTree = "<group>";
@@ -132,6 +145,17 @@
 			path = /tmp/QS/Configuration;
 			sourceTree = "<group>";
 		};
+		E161D1B215470C8C0045A22A /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				E161D1B315470C8C0045A22A /* CHANGELOG.md */,
+				E161D1B415470C8C0045A22A /* JSONKit.h */,
+				E161D1B515470C8C0045A22A /* JSONKit.m */,
+				E161D1B615470C8C0045A22A /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,7 +175,7 @@
 			);
 			name = GoogleChrome;
 			productName = GoogleChrome;
-			productReference = E15A5AA4152B5742008A0CEA /* GoogleChrome.qsplugin */;
+			productReference = E15A5AA4152B5742008A0CEA /* GoogleChrome.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -187,6 +211,8 @@
 			files = (
 				E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */,
 				E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */,
+				E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */,
+				E161D1B915470C8C0045A22A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +243,8 @@
 				E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */,
 				E14F967F152ED50800DBA105 /* QSGoogleChromeActions.m in Sources */,
 				E14F9689152EDF4600DBA105 /* QSGoogleChromeObjectSource.m in Sources */,
+				E161D1B815470C8C0045A22A /* JSONKit.m in Sources */,
+				E161D1BD154868770045A22A /* QSGoogleChromeBookmarksParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
