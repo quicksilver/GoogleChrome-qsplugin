@@ -56,7 +56,7 @@
         
         // The root bookmark folders
         QSGoogleChromeBookmarksParser *parser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
-        [children addObjectsFromArray:[parser bookmarks]];
+        [children addObjectsFromArray:[parser loadBookmarksFrom:kQSGoogleChromeBookmarksFile omitRoots:NO]];
 
         [object setChildren:children];
         return YES;
@@ -77,21 +77,8 @@
         // Add child folders and urls
         NSDictionary *folder = [object objectForType:kQSGoogleChromeBookmarkFolder];
         QSGoogleChromeBookmarksParser *parser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
-        NSDictionary *bookmark;
-        NSString *type;
         
-        for (bookmark in [folder objectForKey:@"children"]) {
-            type = [bookmark objectForKey:@"type"];
-            
-            if ([type isEqualToString:@"folder"]) {
-                [children addObject:[parser createFolderObject:bookmark]];
-            } else if ([type isEqualToString:@"url"]) {
-                [children addObject:[QSObject
-                                     URLObjectWithURL:[bookmark objectForKey:@"url"]
-                                     title:[bookmark objectForKey:@"name"]]];
-            }
-        }
-        
+        [children addObjectsFromArray:[parser createObjectsForChildren:folder]];
         [object setChildren:children];
         
         return YES;

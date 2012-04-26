@@ -12,12 +12,28 @@
 
 
 /*
- Load bookmarks from Chrome's JSON bookmarks file
+ Validates that the path from the file system object source is a bookmarks file
  */
-- (NSArray *)bookmarks {
+- (BOOL)validParserForPath:(NSString *)path {
+    return [[path lastPathComponent] isEqualToString:@"Bookmarks"];
+}
+
+
+/*
+ Quicksilver file system object source method.
+ */
+- (NSArray *)objectsFromPath:(NSString *)path withSettings:(NSDictionary *)settings {
+    return [self loadBookmarksFrom:path omitRoots:YES];
+}
+
+
+/*
+ Load bookmarks the given path
+ */
+- (NSArray *)loadBookmarksFrom:(NSString *)path omitRoots:(BOOL)omitRoots {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];
     
-    NSData *jsonData = [NSData dataWithContentsOfFile:[kQSGoogleChromeBookmarksFile stringByStandardizingPath]];
+    NSData *jsonData = [NSData dataWithContentsOfFile:[path stringByStandardizingPath]];
     NSDictionary *roots = [[jsonData objectFromJSONData] objectForKey:@"roots"];
     
     NSString *key;
@@ -30,7 +46,11 @@
         
         // Only add non-empty roots
         if ([bookmarkChildren count] > 0) {
-            [array addObject:[self createFolderObject:bookmark]];
+            if (omitRoots) {
+                [array addObjectsFromArray:[self createObjectsForChildren:bookmark]];
+            } else {
+                [array addObject:[self createFolderObject:bookmark]];
+            }
         }
     }
     
@@ -64,6 +84,33 @@
     
     return folder;
 }
+
+
+/*
+ Creates Quicksilver objects for all the children in a
+ bookmark folder.
+ */
+- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder {
+    NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
+    
+    NSDictionary *child;
+    NSString *type;
+    
+    for (child in [bookmarkFolder objectForKey:@"children"]) {
+        type = [child objectForKey:@"type"];
+        
+        if ([type isEqualToString:@"folder"]) {
+            [children addObject:[self createFolderObject:child]];
+        } else if ([type isEqualToString:@"url"]) {
+            [children addObject:[QSObject
+                                 URLObjectWithURL:[child objectForKey:@"url"]
+                                 title:[child objectForKey:@"name"]]];
+        }
+    }
+    
+    return children;
+}
+
 
 
 @end

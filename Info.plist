@@ -59,6 +59,31 @@
 					<key>source</key>
 					<string>QSGoogleChromeObjectSource</string>
 				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeBookmarks</string>
+					<key>icon</key>
+					<string>com.google.Chrome</string>
+					<key>name</key>
+					<string>Bookmarks</string>
+					<key>settings</key>
+					<dict>
+						<key>fileContents</key>
+						<string>Chrome Bookmarks</string>
+						<key>parser</key>
+						<string>QSGoogleChromeBookmarksParser</string>
+						<key>path</key>
+						<string>~/Library/Application Support/Google/Chrome/Default/Bookmarks</string>
+						<key>scanContents</key>
+						<integer>1</integer>
+						<key>skipItem</key>
+						<integer>1</integer>
+						<key>watchTarget</key>
+						<true/>
+					</dict>
+					<key>source</key>
+					<string>QSFileSystemObjectSource</string>
+				</dict>
 			</array>
 			<key>icon</key>
 			<string>com.google.Chrome</string>
@@ -81,6 +106,11 @@
 		<dict>
 			<key>com.google.Chrome</key>
 			<string>QSGoogleChromeObjectSource</string>
+		</dict>
+		<key>QSFSParsers</key>
+		<dict>
+			<key>QSGoogleChromeBookmarksParser</key>
+			<string>QSGoogleChromeBookmarksParser</string>
 		</dict>
 		<key>QSObjectHandlers</key>
 		<dict>

@@ -12,7 +12,8 @@
 
 @interface QSGoogleChromeBookmarksParser : QSParser
 
-- (NSArray *)bookmarks;
+- (NSArray *)loadBookmarksFrom:(NSString *)path omitRoots:(BOOL)omitRoots;
 - (QSObject *)createFolderObject:(NSDictionary *)bookmark;
+- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder;
 
 @end
