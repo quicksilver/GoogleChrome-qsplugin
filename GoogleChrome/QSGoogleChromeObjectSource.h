@@ -12,6 +12,7 @@
 
 @interface QSGoogleChromeObjectSource : QSObjectSource
 
+- (NSArray *)objectsForEntry:(NSDictionary *)theEntry;
 - (BOOL)loadChildrenForObject:(QSObject *)object;
 - (void)setQuickIconForObject:(QSObject *)object;
 - (BOOL)objectHasChildren:(QSObject *)object;

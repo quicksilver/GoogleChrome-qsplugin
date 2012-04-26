@@ -12,6 +12,31 @@
 
 
 /*
+ Always rescan the catalog entries provided by this object source
+ */
+- (BOOL)indexIsValidFromDate:(NSDate *)indexDate forEntry:(NSDictionary *)theEntry {
+	return NO;
+}
+
+
+/*
+ Provides catalog entries for the current open web pages object
+ */
+- (NSArray *)objectsForEntry:(NSDictionary *)theEntry {
+    if ([[theEntry objectForKey:@"ID"] isEqualToString:@"QSPresetGoogleChromeOpenPages"]) {
+        QSObject *openPages = [QSObject objectWithName:@"Open Web Pages (Chrome)"];
+        
+        [openPages setPrimaryType:kQSGoogleChromeOpenWebPages];
+        [openPages setObject:@"Open Web Pages (Chrome)" forType:kQSGoogleChromeOpenWebPages];
+        
+		return [NSArray arrayWithObject:openPages];
+	}
+    return nil;
+}
+
+
+
+/*
  Loads right arrow children for the Chrome app, the open web pages proxy object
  and the folders in the bookmarks.
  */

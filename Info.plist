@@ -42,6 +42,34 @@
 			<string>com.google.Chrome</string>
 		</array>
 	</dict>
+	<key>QSPresetAdditions</key>
+	<array>
+		<dict>
+			<key>ID</key>
+			<string>QSPresetGoogleChromeGroup</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeOpenPages</string>
+					<key>icon</key>
+					<string>com.google.Chrome</string>
+					<key>name</key>
+					<string>Open Web Pages</string>
+					<key>source</key>
+					<string>QSGoogleChromeObjectSource</string>
+				</dict>
+			</array>
+			<key>icon</key>
+			<string>com.google.Chrome</string>
+			<key>name</key>
+			<string>Google Chrome</string>
+			<key>requiresBundle</key>
+			<string>com.google.Chrome</string>
+			<key>source</key>
+			<string>QSGroupObjectSource</string>
+		</dict>
+	</array>
 	<key>QSRegistration</key>
 	<dict>
 		<key>QSActionProviders</key>
@@ -59,6 +87,11 @@
 			<key>com.google.Chrome.openPages</key>
 			<string>QSGoogleChromeObjectSource</string>
 			<key>com.google.Chrome.bookmarkFolder</key>
+			<string>QSGoogleChromeObjectSource</string>
+		</dict>
+		<key>QSObjectSources</key>
+		<dict>
+			<key>QSGoogleChromeObjectSource</key>
 			<string>QSGoogleChromeObjectSource</string>
 		</dict>
 		<key>QSProxies</key>
