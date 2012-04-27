@@ -18,4 +18,5 @@
 
 // Child objects
 #define kQSGoogleChromeOpenWebPages @"com.google.Chrome.openPages"
+#define kQSGoogleChromeOpenWebPagesName @"Open Web Pages (Chrome)"
 #define kQSGoogleChromeBookmarkFolder @"com.google.Chrome.bookmarkFolder"

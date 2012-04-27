@@ -24,12 +24,7 @@
  */
 - (NSArray *)objectsForEntry:(NSDictionary *)theEntry {
     if ([[theEntry objectForKey:@"ID"] isEqualToString:@"QSPresetGoogleChromeOpenPages"]) {
-        QSObject *openPages = [QSObject objectWithName:@"Open Web Pages (Chrome)"];
-        
-        [openPages setPrimaryType:kQSGoogleChromeOpenWebPages];
-        [openPages setObject:@"Open Web Pages (Chrome)" forType:kQSGoogleChromeOpenWebPages];
-        
-		return [NSArray arrayWithObject:openPages];
+		return [NSArray arrayWithObject:[self createOpenPagesObject]];
 	}
     return nil;
 }
@@ -44,15 +39,8 @@
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
     
     if ([[object primaryType] isEqualToString:NSFilenamesPboardType]) {
-        QSObject *child;
-        
         // Open web pages
-        child = [QSObject objectWithName:@"Open Web Pages (Chrome)"];
-        
-        [child setPrimaryType:kQSGoogleChromeOpenWebPages];
-        [child setObject:@"Open Web Pages (Chrome)" forType:kQSGoogleChromeOpenWebPages];
-        
-        [children addObject:child];
+        [children addObject:[self createOpenPagesObject]];
         
         // The root bookmark folders
         QSGoogleChromeBookmarksParser *parser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
@@ -126,6 +114,19 @@
     }
     
     return nil;
+}
+
+
+/*
+ Creates the QS object for the current open web pages
+ */
+- (QSObject *)createOpenPagesObject {
+    QSObject *object = [QSObject objectWithName:kQSGoogleChromeOpenWebPagesName];
+    
+    [object setPrimaryType:kQSGoogleChromeOpenWebPages];
+    [object setObject:kQSGoogleChromeOpenWebPagesName forType:kQSGoogleChromeOpenWebPages];
+    
+    return object;
 }
 
 
