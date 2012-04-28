@@ -23,14 +23,14 @@
  Quicksilver file system object source method.
  */
 - (NSArray *)objectsFromPath:(NSString *)path withSettings:(NSDictionary *)settings {
-    return [self loadBookmarksFrom:path omitRoots:YES];
+    return [self loadBookmarksFrom:path deep:YES];
 }
 
 
 /*
  Load bookmarks the given path
  */
-- (NSArray *)loadBookmarksFrom:(NSString *)path omitRoots:(BOOL)omitRoots {
+- (NSArray *)loadBookmarksFrom:(NSString *)path deep:(BOOL)deep {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];
     
     NSData *jsonData = [NSData dataWithContentsOfFile:[path stringByStandardizingPath]];
@@ -46,10 +46,9 @@
         
         // Only add non-empty roots
         if ([bookmarkChildren count] > 0) {
-            if (omitRoots) {
+            [array addObject:[self createFolderObject:bookmark]];
+            if (deep) {
                 [array addObjectsFromArray:[self createObjectsForChildren:bookmark]];
-            } else {
-                [array addObject:[self createFolderObject:bookmark]];
             }
         }
     }

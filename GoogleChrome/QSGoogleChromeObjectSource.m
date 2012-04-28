@@ -44,7 +44,7 @@
         
         // The root bookmark folders
         QSGoogleChromeBookmarksParser *parser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
-        [children addObjectsFromArray:[parser loadBookmarksFrom:kQSGoogleChromeBookmarksFile omitRoots:NO]];
+        [children addObjectsFromArray:[parser loadBookmarksFrom:kQSGoogleChromeBookmarksFile deep:NO]];
 
         [object setChildren:children];
         return YES;
