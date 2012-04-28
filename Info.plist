@@ -102,6 +102,31 @@
 					<key>source</key>
 					<string>QSFileSystemObjectSource</string>
 				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeHistory</string>
+					<key>icon</key>
+					<string>com.google.Chrome</string>
+					<key>name</key>
+					<string>Chrome History</string>
+					<key>settings</key>
+					<dict>
+						<key>fileContents</key>
+						<string>Chrome History</string>
+						<key>parser</key>
+						<string>QSGoogleChromeHistoryParser</string>
+						<key>path</key>
+						<string>~/Library/Application Support/Google/Chrome/Default/History</string>
+						<key>skipItem</key>
+						<integer>1</integer>
+						<key>watchTarget</key>
+						<true/>
+					</dict>
+					<key>source</key>
+					<string>QSFileSystemObjectSource</string>
+					<key>enabled</key>
+					<false/>
+				</dict>
 			</array>
 			<key>icon</key>
 			<string>com.google.Chrome</string>
@@ -128,6 +153,8 @@
 		<key>QSFSParsers</key>
 		<dict>
 			<key>QSGoogleChromeBookmarksParser</key>
+			<string>QSGoogleChromeBookmarksParser</string>
+			<key>QSGoogleChromeHistoryParser</key>
 			<string>QSGoogleChromeBookmarksParser</string>
 		</dict>
 		<key>QSObjectHandlers</key>

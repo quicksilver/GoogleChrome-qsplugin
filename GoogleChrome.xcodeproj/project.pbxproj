@@ -22,6 +22,8 @@
 		E15D7563154C276200CA71BF /* Readme.mkdn in Resources */ = {isa = PBXBuildFile; fileRef = E15D755B154C276200CA71BF /* Readme.mkdn */; };
 		E15D7564154C276200CA71BF /* shell.c in Sources */ = {isa = PBXBuildFile; fileRef = E15D755C154C276200CA71BF /* shell.c */; };
 		E15D7565154C276200CA71BF /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = E15D755D154C276200CA71BF /* sqlite3.c */; };
+		E15D7569154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E15D7568154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m */; };
+		E15D756C154C29C600CA71BF /* QSGoogleChromeHistoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E15D756B154C29C600CA71BF /* QSGoogleChromeHistoryParser.m */; };
 		E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = E161D1B315470C8C0045A22A /* CHANGELOG.md */; };
 		E161D1B815470C8C0045A22A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E161D1B515470C8C0045A22A /* JSONKit.m */; };
 		E161D1B915470C8C0045A22A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E161D1B615470C8C0045A22A /* README.md */; };
@@ -74,6 +76,10 @@
 		E15D755D154C276200CA71BF /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		E15D755E154C276200CA71BF /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		E15D755F154C276200CA71BF /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		E15D7567154C27A300CA71BF /* QSGoogleChromeDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeDatabaseManager.h; sourceTree = "<group>"; };
+		E15D7568154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeDatabaseManager.m; sourceTree = "<group>"; };
+		E15D756A154C29C600CA71BF /* QSGoogleChromeHistoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeHistoryParser.h; sourceTree = "<group>"; };
+		E15D756B154C29C600CA71BF /* QSGoogleChromeHistoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeHistoryParser.m; sourceTree = "<group>"; };
 		E161D1B315470C8C0045A22A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		E161D1B415470C8C0045A22A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		E161D1B515470C8C0045A22A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -148,6 +154,10 @@
 				E14F9688152EDF4600DBA105 /* QSGoogleChromeObjectSource.m */,
 				E161D1BB154868770045A22A /* QSGoogleChromeBookmarksParser.h */,
 				E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */,
+				E15D756A154C29C600CA71BF /* QSGoogleChromeHistoryParser.h */,
+				E15D756B154C29C600CA71BF /* QSGoogleChromeHistoryParser.m */,
+				E15D7567154C27A300CA71BF /* QSGoogleChromeDatabaseManager.h */,
+				E15D7568154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m */,
 			);
 			path = GoogleChrome;
 			sourceTree = "<group>";
@@ -307,6 +317,8 @@
 				E15D7562154C276200CA71BF /* FMResultSet.m in Sources */,
 				E15D7564154C276200CA71BF /* shell.c in Sources */,
 				E15D7565154C276200CA71BF /* sqlite3.c in Sources */,
+				E15D7569154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m in Sources */,
+				E15D756C154C29C600CA71BF /* QSGoogleChromeHistoryParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
