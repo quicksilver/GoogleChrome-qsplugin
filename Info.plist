@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Google Chrome</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
@@ -22,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CFBundleDisplayName</key>
+	<string>Google Chrome</string>
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
@@ -34,16 +36,16 @@
 		<key>description</key>
 		<string>Access to information and functionality in the Google Chrome web browser</string>
 		<key>extendedDescription</key>
-		<string>&lt;h2 id="quicksilver-google-chrome-plugin"&gt;Quicksilver Google Chrome plugin&lt;/h2&gt;
-&lt;p&gt;This plugin adds functionality for accessing different aspects of &lt;a href="https://www.google.com/chrome"&gt;Google Chrome&lt;/a&gt; in Quicksilver.&lt;/p&gt;
-&lt;p&gt;This plugin contains adapted code from the &lt;a href="https://github.com/quicksilver/com.apple.Safari-qsplugin"&gt;Safari plugin&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id="catalog"&gt;Catalog&lt;/h3&gt;
+		<string>&lt;h2 id=&quot;quicksilver-google-chrome-plugin&quot;&gt;Quicksilver Google Chrome plugin&lt;/h2&gt;
+&lt;p&gt;This plugin adds functionality for accessing different aspects of &lt;a href=&quot;https://www.google.com/chrome&quot;&gt;Google Chrome&lt;/a&gt; in Quicksilver.&lt;/p&gt;
+&lt;p&gt;This plugin contains adapted code from the &lt;a href=&quot;https://github.com/quicksilver/com.apple.Safari-qsplugin&quot;&gt;Safari plugin&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;catalog&quot;&gt;Catalog&lt;/h3&gt;
 &lt;p&gt;The following additions are made to the catalog:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Open web pages&lt;/strong&gt; - A container for the current open web pages in Chrome, access the actual web pages by right arrowing into the container. Also available when right arrowing into the Chrome application.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Bookmarks&lt;/strong&gt; - The top level bookmarks and bookmark folders from Chrome. Also available when right arrowing into the Chrome application&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="proxies"&gt;Proxies&lt;/h3&gt;
+&lt;h3 id=&quot;proxies&quot;&gt;Proxies&lt;/h3&gt;
 &lt;p&gt;The following proxies are available:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Current Web Page&lt;/strong&gt; - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
@@ -79,7 +81,7 @@
 					<key>icon</key>
 					<string>com.google.Chrome</string>
 					<key>name</key>
-					<string>Bookmarks</string>
+					<string>Chrome Bookmarks</string>
 					<key>settings</key>
 					<dict>
 						<key>fileContents</key>
