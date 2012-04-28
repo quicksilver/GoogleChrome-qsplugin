@@ -49,7 +49,7 @@
         [object setChildren:children];
         return YES;
         
-    } else if ([[object primaryType] isEqualToString:kQSGoogleChromeOpenWebPages]) {
+    } else if ([[object primaryType] isEqualToString:kQSGoogleChromeOpenWebPages] && QSAppIsRunning(kQSGoogleChromeBundle)) {
         // Add urls from all open tabs
         GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
         
@@ -93,6 +93,10 @@
  All objects handled by this source have children
  */
 - (BOOL)objectHasChildren:(QSObject *)object {
+    NSString *type = [object primaryType];
+    if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
+        return QSAppIsRunning(kQSGoogleChromeBundle);
+    }
     return YES;
 }
 
