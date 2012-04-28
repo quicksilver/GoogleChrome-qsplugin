@@ -1,0 +1,11 @@
+# The SQLite Amalgamation
+
+The core SQLite library consists of about 96 files of C code (as of Version 3.6.21) in the core with 11 additional files in the FTS3 and RTREE extensions. Most of these are "source" files in the sense that they are stored in the configuration management system and are maintained directly. But 6 of the core C files are generated automatically during the compilation process. Of the 96 code files, 76 are C code and 20 are C header files.
+
+The standard makefiles for SQLite have a target for building an object we call the `amalgamation`. The amalgamation is a single C code file, named `sqlite3.c`, that contains all C code for the core SQLite library and the FTS3 and RTREE extensions. This file contains about 110K lines of code (65K if you omit blank lines and comments) and is over 3.8 megabytes in size.
+
+The amalgamation contains everything you need to integrate SQLite into a larger project. Just copy the amalgamation into your source directory and compile it along with the other C code files in your project. You may also want to make use of the `sqlite3.h` header file that defines the programming API for SQLite. The sqlite3.h header file is available separately. The `sqlite3.h` file is also contained within the amalgamation, in the first couple of thousand lines. So if you have a copy of `sqlite3.c` but cannot seem to locate sqlite3.h, you can always regenerate the `sqlite3.h` by copying and pasting from the amalgamation.
+
+In addition to making SQLite easier to incorporate into other projects, the amalgamation also makes it run faster. Many compilers are able to do additional optimizations on code when it is contained with in a single translation unit such as it is in the amalgamation. We have measured performance improvements of between 5 and 10% when we use the amalgamation to compile SQLite rather than individual source files. The downside of this is that the additional optimizations often take the form of function inlining which tends to make the size of the resulting binary image larger.
+
+Source http://www.sqlite.org/amalgamation.html
