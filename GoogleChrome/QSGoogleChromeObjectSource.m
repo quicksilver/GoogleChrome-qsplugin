@@ -43,9 +43,16 @@
         [children addObject:[self createOpenPagesObject]];
         
         // The root bookmark folders
-        QSGoogleChromeBookmarksParser *parser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
-        [children addObjectsFromArray:[parser loadBookmarksFrom:kQSGoogleChromeBookmarksFile deep:NO]];
-
+        QSGoogleChromeBookmarksParser *bookmarksParser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
+        [children addObjectsFromArray:[bookmarksParser loadBookmarksFrom:kQSGoogleChromeBookmarksFile deep:NO]];
+        
+        // History
+        QSObject *history = [QSObject objectWithName:kQSGoogleChromeHistoryName];
+        
+        [history setPrimaryType:kQSGoogleChromeHistory];
+        [history setObject:kQSGoogleChromeHistoryName forType:kQSGoogleChromeHistory];
+        [children addObject:history];
+        
         [object setChildren:children];
         return YES;
         
@@ -74,6 +81,14 @@
         [object setChildren:children];
         
         return YES;
+    } else if ([[object primaryType] isEqualToString:kQSGoogleChromeHistory]) {
+        // History entries
+        QSGoogleChromeHistoryParser *parser = [[[QSGoogleChromeHistoryParser alloc] init] autorelease];
+        
+        [children addObjectsFromArray:[parser allHistoryEntriesFromDB:kQSGoogleChromeHistoryFile]];
+        [object setChildren:children];
+        
+        return YES;
     }
     
     return NO;
@@ -88,6 +103,8 @@
     if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
         [object setIcon:[QSResourceManager imageNamed:kQSGoogleChromeBundle]];
     } else if ([type isEqualToString:kQSGoogleChromeBookmarkFolder]) {
+        [object setIcon:[QSResourceManager imageNamed:@"ChromeFolder"]]; 
+    } else if ([type isEqualToString:kQSGoogleChromeHistory]) {
         [object setIcon:[QSResourceManager imageNamed:@"ChromeFolder"]]; 
     }
 }

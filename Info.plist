@@ -165,6 +165,8 @@
 			<string>QSGoogleChromeObjectSource</string>
 			<key>com.google.Chrome.bookmarkFolder</key>
 			<string>QSGoogleChromeObjectSource</string>
+			<key>com.google.Chrome.history</key>
+			<string>QSGoogleChromeObjectSource</string>
 		</dict>
 		<key>QSObjectSources</key>
 		<dict>

@@ -11,6 +11,7 @@
 #define kQSGoogleChromeBundle @"com.google.Chrome"
 
 #define kQSGoogleChromeBookmarksFile @"~/Library/Application Support/Google/Chrome/Default/Bookmarks"
+#define kQSGoogleChromeHistoryFile @"~/Library/Application Support/Google/Chrome/Default/History"
 
 // Proxies
 #define kQSGoogleChromeFrontPageProxy @"QSGoogleChromeFrontPageProxy"
@@ -20,3 +21,5 @@
 #define kQSGoogleChromeOpenWebPages @"com.google.Chrome.openPages"
 #define kQSGoogleChromeOpenWebPagesName @"Open Web Pages (Chrome)"
 #define kQSGoogleChromeBookmarkFolder @"com.google.Chrome.bookmarkFolder"
+#define kQSGoogleChromeHistory @"com.google.Chrome.history"
+#define kQSGoogleChromeHistoryName @"History"

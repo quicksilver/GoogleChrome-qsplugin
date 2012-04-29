@@ -9,6 +9,7 @@
 #import <QSCore/QSCore.h>
 #import "QSGoogleChromeDefinitions.h"
 #import "QSGoogleChromeBookmarksParser.h"
+#import "QSGoogleChromeHistoryParser.h"
 
 @interface QSGoogleChromeObjectSource : QSObjectSource
 

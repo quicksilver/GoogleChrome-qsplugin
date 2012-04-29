@@ -12,4 +12,6 @@
 
 @interface QSGoogleChromeHistoryParser : QSParser
 
+- (NSArray *)allHistoryEntriesFromDB:(NSString *)path;
+
 @end
