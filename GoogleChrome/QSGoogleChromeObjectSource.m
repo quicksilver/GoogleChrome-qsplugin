@@ -88,7 +88,7 @@
     if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
         [object setIcon:[QSResourceManager imageNamed:kQSGoogleChromeBundle]];
     } else if ([type isEqualToString:kQSGoogleChromeBookmarkFolder]) {
-        [object setIcon:[QSResourceManager imageNamed:@"GenericFolderIcon"]]; 
+        [object setIcon:[QSResourceManager imageNamed:@"ChromeFolder"]]; 
     }
 }
 

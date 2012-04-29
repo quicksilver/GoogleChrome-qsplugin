@@ -50,7 +50,9 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Current Web Page&lt;/strong&gt; - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Current Web Site&lt;/strong&gt; - A web search on the site displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
-&lt;/ul&gt;</string>
+&lt;/ul&gt;
+&lt;h3 id=&quot;additional-information&quot;&gt;Additional information&lt;/h3&gt;
+&lt;p&gt;The icon used for the bookmarks folder is created by &lt;a href=&quot;http://ermonas.deviantart.com/&quot;&gt;Ernesto Monasterio&lt;/a&gt;, and can be found &lt;a href=&quot;http://ermonas.deviantart.com/art/Google-Chrome-Folder-Icon-201492913&quot;&gt;Here&lt;/a&gt;. The icon is licensed under a &lt;a href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Creative Commons Attribution-Noncommercial-Share Alike 3.0 License&lt;/a&gt;.&lt;/p&gt;</string>
 		<key>icon</key>
 		<string>com.google.Chrome</string>
 		<key>relatedBundles</key>
@@ -188,6 +190,16 @@
 				<string>Google Chrome</string>
 			</dict>
 		</array>
+	</dict>
+	<key>QSResourceAdditions</key>
+	<dict>
+		<key>ChromeFolder</key>
+		<dict>
+			<key>bundle</key>
+			<string>se.stdin.quicksilver.${PRODUCT_NAME:rfc1034identifier}</string>
+			<key>resource</key>
+			<string>Chrome Folder.icns</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E109EA0F154D2A4800FDAC40 /* Chrome Folder.icns in Resources */ = {isa = PBXBuildFile; fileRef = E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */; };
 		E14F967F152ED50800DBA105 /* QSGoogleChromeActions.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */; };
 		E14F9689152EDF4600DBA105 /* QSGoogleChromeObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F9688152EDF4600DBA105 /* QSGoogleChromeObjectSource.m */; };
 		E15A5AA8152B5742008A0CEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA7152B5742008A0CEA /* Cocoa.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Chrome Folder.icns"; sourceTree = "<group>"; };
 		E14F967D152ED50800DBA105 /* QSGoogleChromeActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeActions.h; sourceTree = "<group>"; };
 		E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeActions.m; sourceTree = "<group>"; };
 		E14F9687152EDF4600DBA105 /* QSGoogleChromeObjectSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeObjectSource.h; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E109EA0D154D2A4800FDAC40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		E15A5A98152B5742008A0CEA = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E15A5AB1152B5742008A0CEA /* Configuration */,
+				E109EA0D154D2A4800FDAC40 /* Resources */,
 				E15A5AAC152B5742008A0CEA /* Supporting Files */,
 				E14F967D152ED50800DBA105 /* QSGoogleChromeActions.h */,
 				E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */,
@@ -213,6 +224,7 @@
 				E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */,
 				E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */,
 				E161D1B915470C8C0045A22A /* README.md in Resources */,
+				E109EA0F154D2A4800FDAC40 /* Chrome Folder.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

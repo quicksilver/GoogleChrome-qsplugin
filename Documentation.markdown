@@ -19,3 +19,11 @@ The following proxies are available:
 
 * **Current Web Page** - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.
 * **Current Web Site** - A web search on the site displayed in the frontmost tab of the frontmost window in Chrome.
+
+### Additional information ###
+
+The icon used for the bookmarks folder is created by [Ernesto
+Monasterio](http://ermonas.deviantart.com/), and can be found
+[Here](http://ermonas.deviantart.com/art/Google-Chrome-Folder-Icon-201492913).
+The icon is licensed under a [Creative Commons Attribution-Noncommercial-Share
+Alike 3.0 License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
