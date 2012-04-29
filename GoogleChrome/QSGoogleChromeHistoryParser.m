@@ -25,7 +25,11 @@
         return objects;
     }
     
-    FMResultSet *rs = [db executeQuery:@"select id, url, title from urls order by visit_count desc"];
+    FMResultSet *rs = [db executeQuery:
+                       [NSString stringWithFormat:
+                        @"select id, url, title from urls order by last_visit_time desc limit %d",
+                        [[settings objectForKey:@"historySize"] intValue]
+                        ]];
     
 	if ([db hadError]) {
 		NSLog(@"Error while reading Chrome history database. Error %d: %@", [db lastErrorCode], [db lastErrorMessage]);
