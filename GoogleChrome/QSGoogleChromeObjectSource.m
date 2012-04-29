@@ -49,18 +49,22 @@
         [object setChildren:children];
         return YES;
         
-    } else if ([[object primaryType] isEqualToString:kQSGoogleChromeOpenWebPages] && QSAppIsRunning(kQSGoogleChromeBundle)) {
-        // Add urls from all open tabs
-        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
-        
-        for (GoogleChromeWindow *window in [chrome windows]) {
-            for (GoogleChromeTab *tab in [window tabs]) {
-                [children addObject:[QSObject URLObjectWithURL:tab.URL title:tab.title]];
+    } else if ([[object primaryType] isEqualToString:kQSGoogleChromeOpenWebPages]) {
+        if (QSAppIsRunning(kQSGoogleChromeBundle)) {
+            // Add urls from all open tabs
+            GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+            
+            for (GoogleChromeWindow *window in [chrome windows]) {
+                for (GoogleChromeTab *tab in [window tabs]) {
+                    [children addObject:[QSObject URLObjectWithURL:tab.URL title:tab.title]];
+                }
             }
+            
+            [object setChildren:children];
+            return YES;
+        } else {
+            NSBeep();
         }
-        
-        [object setChildren:children];
-        return YES;
     } else if ([[object primaryType] isEqualToString:kQSGoogleChromeBookmarkFolder]) {
         // Add child folders and urls
         NSDictionary *folder = [object objectForType:kQSGoogleChromeBookmarkFolder];

@@ -31,6 +31,8 @@
                                         [currentURL host]];
             return [QSObject URLObjectWithURL:searchShortcut title:nil];
         }
+    } else {
+        NSBeep();
     }
     
     return nil;
