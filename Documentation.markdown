@@ -18,7 +18,8 @@ The following additions are made to the catalog:
 
 The following actions are available:
 
-* **Reveal tab in Chrome** - Activates the tab in Chrome that contains the selected web page. This is only available for URLs that come from tabs in Chrome, i.e. the listing under "Open web pages".
+* **Reveal tab in Chrome** - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under "Open web pages".
+* **Reload tab in Chrome** - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under "Open web pages".
 
 ### Proxies ###
 
@@ -31,7 +32,7 @@ The following proxies are available:
 
 The following new types are defined:
 
-* **Chrome tab** - A currently open tab in Chrome. Used as secondary type on URLs coming from Chrome tabs.
+* **Chrome Tab** - A currently open tab in Chrome. Used as secondary type on URLs coming from Chrome tabs.
 
 ### Additional information ###
 

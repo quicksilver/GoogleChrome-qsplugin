@@ -41,4 +41,19 @@
 }
 
 
+/*
+ Reloads the tab of a currently open web page in Chrome
+ */
+- (QSObject *)reloadTab:(QSObject *)directObj {
+    NSDictionary *tabInfo = [directObj objectForType:kQSGoogleChromeTab];
+    
+    if (tabInfo) {
+        GoogleChromeTab *tab = [tabInfo objectForKey:@"tab"];
+        [tab reload];
+    }
+    
+    return nil;
+}
+
+
 @end

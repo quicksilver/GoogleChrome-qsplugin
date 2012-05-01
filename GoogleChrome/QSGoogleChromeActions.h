@@ -13,5 +13,6 @@
 
 - (void)performJavaScript:(NSString *)jScript;
 - (QSObject *)revealTab:(QSObject *)directObj;
+- (QSObject *)reloadTab:(QSObject *)directObj;
 
 @end

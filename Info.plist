@@ -41,6 +41,21 @@
 			<key>name</key>
 			<string>Reveal tab in Chrome</string>
 		</dict>
+		<key>QSGoogleChromeReloadTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSGoogleChromeActions</string>
+			<key>actionSelector</key>
+			<string>reloadTab:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.google.Chrome.tab</string>
+			</array>
+			<key>icon</key>
+			<string>com.google.Chrome</string>
+			<key>name</key>
+			<string>Reload tab in Chrome</string>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -67,7 +82,8 @@
 &lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
 &lt;p&gt;The following actions are available:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reveal tab in Chrome&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for URLs that come from tabs in Chrome, i.e. the listing under &amp;quot;Open web pages&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reveal tab in Chrome&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reload tab in Chrome&lt;/strong&gt; - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;proxies&quot;&gt;Proxies&lt;/h3&gt;
 &lt;p&gt;The following proxies are available:&lt;/p&gt;
@@ -78,7 +94,7 @@
 &lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
 &lt;p&gt;The following new types are defined:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Chrome tab&lt;/strong&gt; - A currently open tab in Chrome. Used as secondary type on URLs coming from Chrome tabs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chrome Tab&lt;/strong&gt; - A currently open tab in Chrome. Used as secondary type on URLs coming from Chrome tabs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;additional-information&quot;&gt;Additional information&lt;/h3&gt;
 &lt;p&gt;The icon used for the bookmarks folder is created by &lt;a href=&quot;http://ermonas.deviantart.com/&quot;&gt;Ernesto Monasterio&lt;/a&gt;, and can be found &lt;a href=&quot;http://ermonas.deviantart.com/art/Google-Chrome-Folder-Icon-201492913&quot;&gt;Here&lt;/a&gt;. The icon is licensed under a &lt;a href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Creative Commons Attribution-Noncommercial-Share Alike 3.0 License&lt;/a&gt;.&lt;/p&gt;</string>
