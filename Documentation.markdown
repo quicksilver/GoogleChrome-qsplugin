@@ -14,12 +14,24 @@ The following additions are made to the catalog:
 * **Bookmarks** - The top level bookmarks and bookmark folders from Chrome. Also available when right arrowing into the Chrome application
 * **History** - The 300 latest history entries in Chrome. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.
 
+### Actions ###
+
+The following actions are available:
+
+* **Reveal tab in Chrome** - Activates the tab in Chrome that contains the selected web page. This is only available for URLs that come from tabs in Chrome, i.e. the listing under "Open web pages".
+
 ### Proxies ###
 
 The following proxies are available:
 
 * **Current Web Page** - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.
 * **Current Web Site** - A web search on the site displayed in the frontmost tab of the frontmost window in Chrome.
+
+### Types ###
+
+The following new types are defined:
+
+* **Chrome tab** - A currently open tab in Chrome. Used as secondary type on URLs coming from Chrome tabs.
 
 ### Additional information ###
 

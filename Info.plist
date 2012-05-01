@@ -24,6 +24,24 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>3</string>
+	<key>QSActions</key>
+	<dict>
+		<key>QSGoogleChromeRevealTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSGoogleChromeActions</string>
+			<key>actionSelector</key>
+			<string>revealTab:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.google.Chrome.tab</string>
+			</array>
+			<key>icon</key>
+			<string>com.google.Chrome</string>
+			<key>name</key>
+			<string>Reveal tab in Chrome</string>
+		</dict>
+	</dict>
 	<key>QSPlugIn</key>
 	<dict>
 		<key>author</key>
@@ -46,11 +64,21 @@
 &lt;li&gt;&lt;strong&gt;Bookmarks&lt;/strong&gt; - The top level bookmarks and bookmark folders from Chrome. Also available when right arrowing into the Chrome application&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;History&lt;/strong&gt; - The 300 latest history entries in Chrome. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
+&lt;p&gt;The following actions are available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reveal tab in Chrome&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for URLs that come from tabs in Chrome, i.e. the listing under &amp;quot;Open web pages&amp;quot;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;proxies&quot;&gt;Proxies&lt;/h3&gt;
 &lt;p&gt;The following proxies are available:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Current Web Page&lt;/strong&gt; - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Current Web Site&lt;/strong&gt; - A web search on the site displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
+&lt;p&gt;The following new types are defined:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Chrome tab&lt;/strong&gt; - A currently open tab in Chrome. Used as secondary type on URLs coming from Chrome tabs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;additional-information&quot;&gt;Additional information&lt;/h3&gt;
 &lt;p&gt;The icon used for the bookmarks folder is created by &lt;a href=&quot;http://ermonas.deviantart.com/&quot;&gt;Ernesto Monasterio&lt;/a&gt;, and can be found &lt;a href=&quot;http://ermonas.deviantart.com/art/Google-Chrome-Folder-Icon-201492913&quot;&gt;Here&lt;/a&gt;. The icon is licensed under a &lt;a href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Creative Commons Attribution-Noncommercial-Share Alike 3.0 License&lt;/a&gt;.&lt;/p&gt;</string>
@@ -147,6 +175,8 @@
 		<dict>
 			<key>QSGoogleChromeProxies</key>
 			<string>QSGoogleChromeProxies</string>
+			<key>QSGoogleChromeActions</key>
+			<string>QSGoogleChromeActions</string>
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
@@ -203,6 +233,16 @@
 					<string>Apple URL pasteboard type</string>
 					<string>NSStringPboardType</string>
 				</array>
+			</dict>
+		</dict>
+		<key>QSTypeDefinitions</key>
+		<dict>
+			<key>com.google.Chrome.tab</key>
+			<dict>
+				<key>icon</key>
+				<string>com.google.Chrome</string>
+				<key>name</key>
+				<string>Chrome Tab</string>
 			</dict>
 		</dict>
 		<key>QSWebBrowserMediators</key>

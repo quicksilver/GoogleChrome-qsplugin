@@ -21,4 +21,24 @@
 }
 
 
+/*
+ Activates the tab of a currently open web page in Chrome
+ */
+- (QSObject *)revealTab:(QSObject *)directObj {
+    NSDictionary *tabInfo = [directObj objectForType:kQSGoogleChromeTab];
+    
+    if (tabInfo) {
+        GoogleChromeWindow *window = [tabInfo objectForKey:@"window"];
+        NSNumber *tabIndex = [tabInfo objectForKey:@"tabIndex"];
+        
+        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+        [chrome activate];
+        [window setActiveTabIndex:[tabIndex intValue]];
+        [window setIndex:1];
+    }
+    
+    return nil;
+}
+
+
 @end

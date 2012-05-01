@@ -10,5 +10,8 @@
 #import "QSGoogleChromeDefinitions.h"
 
 @interface QSGoogleChromeActions : NSObject
+
 - (void)performJavaScript:(NSString *)jScript;
+- (QSObject *)revealTab:(QSObject *)directObj;
+
 @end

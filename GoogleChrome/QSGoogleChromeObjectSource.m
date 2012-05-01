@@ -60,10 +60,23 @@
         if (QSAppIsRunning(kQSGoogleChromeBundle)) {
             // Add urls from all open tabs
             GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+            QSObject *child;
+            int tabIndex;
             
             for (GoogleChromeWindow *window in [chrome windows]) {
+                tabIndex = 1;
+                
                 for (GoogleChromeTab *tab in [window tabs]) {
-                    [children addObject:[QSObject URLObjectWithURL:tab.URL title:tab.title]];
+                    child = [QSObject URLObjectWithURL:tab.URL title:tab.title];
+                    [child setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                      tab, @"tab",
+                                      window, @"window",
+                                      [NSNumber numberWithInt:tabIndex], @"tabIndex",
+                                      nil ]
+                             forType:kQSGoogleChromeTab];
+                    
+                    [children addObject:child];
+                    tabIndex++;
                 }
             }
             

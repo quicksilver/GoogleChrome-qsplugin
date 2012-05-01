@@ -13,6 +13,9 @@
 #define kQSGoogleChromeBookmarksFile @"~/Library/Application Support/Google/Chrome/Default/Bookmarks"
 #define kQSGoogleChromeHistoryFile @"~/Library/Application Support/Google/Chrome/Default/History"
 
+// Types
+#define kQSGoogleChromeTab @"com.google.Chrome.tab"
+
 // Proxies
 #define kQSGoogleChromeFrontPageProxy @"QSGoogleChromeFrontPageProxy"
 #define kQSGoogleChromeSearchCurrentSiteProxy @"QSGoogleChromeSearchCurrentSiteProxy"
