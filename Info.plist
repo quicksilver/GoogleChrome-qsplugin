@@ -77,7 +77,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Open web pages&lt;/strong&gt; - A container for the current open web pages in Chrome, access the actual web pages by right arrowing into the container. Also available when right arrowing into the Chrome application.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Bookmarks&lt;/strong&gt; - The top level bookmarks and bookmark folders from Chrome. Also available when right arrowing into the Chrome application&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;History&lt;/strong&gt; - The 300 latest history entries in Chrome. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;History&lt;/strong&gt; - The 300 latest history entries in Chrome, disabled by default. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Search engines&lt;/strong&gt; - All search engines registered in Chrome, disabled by default. They are searchable both by their names and their keywords, and are also available when right arrowing into the Chrome application.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
 &lt;p&gt;The following actions are available:&lt;/p&gt;
@@ -174,6 +175,31 @@
 					<key>enabled</key>
 					<false/>
 				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeSearchEngines</string>
+					<key>icon</key>
+					<string>com.google.Chrome</string>
+					<key>name</key>
+					<string>Chrome Search Engines</string>
+					<key>settings</key>
+					<dict>
+						<key>fileContents</key>
+						<string>Chrome Search Engines</string>
+						<key>parser</key>
+						<string>QSGoogleChromeSearchEnginesParser</string>
+						<key>path</key>
+						<string>~/Library/Application Support/Google/Chrome/Default/Web Data</string>
+						<key>skipItem</key>
+						<integer>1</integer>
+						<key>watchTarget</key>
+						<true/>
+					</dict>
+					<key>source</key>
+					<string>QSFileSystemObjectSource</string>
+					<key>enabled</key>
+					<false/>
+				</dict>
 			</array>
 			<key>icon</key>
 			<string>com.google.Chrome</string>
@@ -204,7 +230,9 @@
 			<key>QSGoogleChromeBookmarksParser</key>
 			<string>QSGoogleChromeBookmarksParser</string>
 			<key>QSGoogleChromeHistoryParser</key>
-			<string>QSGoogleChromeBookmarksParser</string>
+			<string>QSGoogleChromeHistoryParser</string>
+			<key>QSGoogleChromeSearchEnginesParser</key>
+			<string>QSGoogleChromeSearchEnginesParser</string>
 		</dict>
 		<key>QSObjectHandlers</key>
 		<dict>
@@ -213,6 +241,8 @@
 			<key>com.google.Chrome.bookmarkFolder</key>
 			<string>QSGoogleChromeObjectSource</string>
 			<key>com.google.Chrome.history</key>
+			<string>QSGoogleChromeObjectSource</string>
+			<key>com.google.Chrome.searchEngines</key>
 			<string>QSGoogleChromeObjectSource</string>
 		</dict>
 		<key>QSObjectSources</key>

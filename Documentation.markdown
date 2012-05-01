@@ -12,7 +12,8 @@ The following additions are made to the catalog:
 
 * **Open web pages** - A container for the current open web pages in Chrome, access the actual web pages by right arrowing into the container. Also available when right arrowing into the Chrome application.
 * **Bookmarks** - The top level bookmarks and bookmark folders from Chrome. Also available when right arrowing into the Chrome application
-* **History** - The 300 latest history entries in Chrome. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.
+* **History** - The 300 latest history entries in Chrome, disabled by default. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.
+* **Search engines** - All search engines registered in Chrome, disabled by default. They are searchable both by their names and their keywords, and are also available when right arrowing into the Chrome application.
 
 ### Actions ###
 

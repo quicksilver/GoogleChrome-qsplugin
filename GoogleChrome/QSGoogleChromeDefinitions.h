@@ -12,6 +12,7 @@
 
 #define kQSGoogleChromeBookmarksFile @"~/Library/Application Support/Google/Chrome/Default/Bookmarks"
 #define kQSGoogleChromeHistoryFile @"~/Library/Application Support/Google/Chrome/Default/History"
+#define kQSGoogleChromeWebDataFile @"~/Library/Application Support/Google/Chrome/Default/Web Data"
 
 // Types
 #define kQSGoogleChromeTab @"com.google.Chrome.tab"
@@ -23,6 +24,11 @@
 // Child objects
 #define kQSGoogleChromeOpenWebPages @"com.google.Chrome.openPages"
 #define kQSGoogleChromeOpenWebPagesName @"Open Web Pages (Chrome)"
+
+#define kQSGoogleChromeSearchEngines @"com.google.Chrome.searchEngines"
+#define kQSGoogleChromeSearchEnginesName @"Search Engines (Chrome)"
+
 #define kQSGoogleChromeBookmarkFolder @"com.google.Chrome.bookmarkFolder"
+
 #define kQSGoogleChromeHistory @"com.google.Chrome.history"
 #define kQSGoogleChromeHistoryName @"History"

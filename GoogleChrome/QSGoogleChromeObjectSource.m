@@ -25,7 +25,7 @@
 - (NSArray *)objectsForEntry:(NSDictionary *)theEntry {
     if ([[theEntry objectForKey:@"ID"] isEqualToString:@"QSPresetGoogleChromeOpenPages"]) {
 		return [NSArray arrayWithObject:[self createOpenPagesObject]];
-	}
+    }
     return nil;
 }
 
@@ -41,6 +41,9 @@
     if ([[object primaryType] isEqualToString:NSFilenamesPboardType]) {
         // Open web pages
         [children addObject:[self createOpenPagesObject]];
+        
+        // Search engines
+        [children addObject:[self createSearchEnginesObject]];
         
         // The root bookmark folders
         QSGoogleChromeBookmarksParser *bookmarksParser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
@@ -102,6 +105,14 @@
         [object setChildren:children];
         
         return YES;
+    } else if ([[object primaryType] isEqualToString:kQSGoogleChromeSearchEngines]) {
+        // Search engines
+        QSGoogleChromeSearchEnginesParser *parser = [[[QSGoogleChromeSearchEnginesParser alloc] init] autorelease];
+        
+        [children addObjectsFromArray:[parser allSearchesFromDB:kQSGoogleChromeWebDataFile]];
+        [object setChildren:children];
+        
+        return YES;
     }
     
     return NO;
@@ -115,6 +126,8 @@
     NSString *type = [object primaryType];
     if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
         [object setIcon:[QSResourceManager imageNamed:kQSGoogleChromeBundle]];
+    } else if ([type isEqualToString:kQSGoogleChromeSearchEngines]) {
+            [object setIcon:[QSResourceManager imageNamed:kQSGoogleChromeBundle]];
     } else if ([type isEqualToString:kQSGoogleChromeBookmarkFolder]) {
         [object setIcon:[QSResourceManager imageNamed:@"ChromeFolder"]]; 
     } else if ([type isEqualToString:kQSGoogleChromeHistory]) {
@@ -142,6 +155,8 @@
     NSString *type = [object primaryType];
     if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
         return @"URLs from all open windows and tabs";
+    } else if ([type isEqualToString:kQSGoogleChromeSearchEngines]) {
+        return @"Search engines, including keywords";
     } else if ([type isEqualToString:kQSGoogleChromeBookmarkFolder]) {
         // Count the number of children the folder has
         NSDictionary *folder = [object objectForType:kQSGoogleChromeBookmarkFolder];
@@ -163,6 +178,19 @@
     
     [object setPrimaryType:kQSGoogleChromeOpenWebPages];
     [object setObject:kQSGoogleChromeOpenWebPagesName forType:kQSGoogleChromeOpenWebPages];
+    
+    return object;
+}
+
+
+/*
+ Creates the QS object for Chrome's search engines
+ */
+- (QSObject *)createSearchEnginesObject {
+    QSObject *object = [QSObject objectWithName:kQSGoogleChromeSearchEnginesName];
+    
+    [object setPrimaryType:kQSGoogleChromeSearchEngines];
+    [object setObject:kQSGoogleChromeSearchEnginesName forType:kQSGoogleChromeSearchEngines];
     
     return object;
 }
