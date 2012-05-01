@@ -19,12 +19,22 @@
     
     if (QSAppIsRunning(kQSGoogleChromeBundle)) {
         GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
-        GoogleChromeTab *currentTab = [[[chrome windows] objectAtIndex:0] activeTab];
+        GoogleChromeWindow *currentWindow = [[chrome windows] objectAtIndex:0];
+        GoogleChromeTab *currentTab = [currentWindow activeTab];
         
         NSString *identifier = [proxy identifier];
         
         if ([identifier isEqualToString:kQSGoogleChromeFrontPageProxy] && currentTab.URL) {
-            return [QSObject URLObjectWithURL:currentTab.URL title:currentTab.title];
+            QSObject *frontPage = [QSObject URLObjectWithURL:currentTab.URL title:currentTab.title];
+            
+            [frontPage setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                  currentTab, @"tab",
+                                  currentWindow, @"window",
+                                  [NSNumber numberWithInt:[currentWindow activeTabIndex]], @"tabIndex",
+                                  nil ]
+                         forType:kQSGoogleChromeTab];
+            
+            return frontPage;
         } else if ([identifier isEqualToString:kQSGoogleChromeSearchCurrentSiteProxy] && currentTab.URL) {
             NSURL *currentURL = [NSURL URLWithString:currentTab.URL];
             NSString *searchShortcut = [NSString stringWithFormat:@"http://www.google.com/search?q=*** site:%@", 

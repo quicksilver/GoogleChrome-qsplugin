@@ -18,8 +18,8 @@ The following additions are made to the catalog:
 
 The following actions are available:
 
-* **Reveal tab in Chrome** - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under "Open web pages".
-* **Reload tab in Chrome** - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under "Open web pages".
+* **Reveal tab in Chrome** - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under "Open web pages", or "Current Web Page".
+* **Reload tab in Chrome** - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under "Open web pages", or "Current Web Page".
 
 ### Proxies ###
 

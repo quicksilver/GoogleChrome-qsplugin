@@ -82,8 +82,8 @@
 &lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
 &lt;p&gt;The following actions are available:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reveal tab in Chrome&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reload tab in Chrome&lt;/strong&gt; - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reveal tab in Chrome&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;, or &amp;quot;Current Web Page&amp;quot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reload tab in Chrome&lt;/strong&gt; - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;, or &amp;quot;Current Web Page&amp;quot;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;proxies&quot;&gt;Proxies&lt;/h3&gt;
 &lt;p&gt;The following proxies are available:&lt;/p&gt;
@@ -234,6 +234,7 @@
 				<array>
 					<string>Apple URL pasteboard type</string>
 					<string>NSStringPboardType</string>
+					<string>com.google.Chrome.tab</string>
 				</array>
 			</dict>
 			<key>QSGoogleChromeSearchCurrentSiteProxy</key>
