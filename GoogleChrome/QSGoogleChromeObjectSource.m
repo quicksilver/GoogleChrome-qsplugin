@@ -93,7 +93,7 @@
         NSDictionary *folder = [object objectForType:kQSGoogleChromeBookmarkFolder];
         QSGoogleChromeBookmarksParser *parser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
         
-        [children addObjectsFromArray:[parser createObjectsForChildren:folder]];
+        [children addObjectsFromArray:[parser createObjectsForChildren:folder deep:NO]];
         [object setChildren:children];
         
         return YES;

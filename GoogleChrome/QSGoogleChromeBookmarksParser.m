@@ -48,7 +48,7 @@
         if ([bookmarkChildren count] > 0) {
             [array addObject:[self createFolderObject:bookmark]];
             if (deep) {
-                [array addObjectsFromArray:[self createObjectsForChildren:bookmark]];
+                [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep]];
             }
         }
     }
@@ -89,7 +89,7 @@
  Creates Quicksilver objects for all the children in a
  bookmark folder.
  */
-- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder {
+- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder deep:(BOOL)deep {
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
     
     NSDictionary *child;
@@ -100,6 +100,9 @@
         
         if ([type isEqualToString:@"folder"]) {
             [children addObject:[self createFolderObject:child]];
+            if (deep) {
+                [children addObjectsFromArray:[self createObjectsForChildren:child deep:deep]];
+            }
         } else if ([type isEqualToString:@"url"]) {
             [children addObject:[QSObject
                                  URLObjectWithURL:[child objectForKey:@"url"]

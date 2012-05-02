@@ -14,6 +14,6 @@
 
 - (NSArray *)loadBookmarksFrom:(NSString *)path deep:(BOOL)deep;
 - (QSObject *)createFolderObject:(NSDictionary *)bookmark;
-- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder;
+- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder deep:(BOOL)deep;
 
 @end
