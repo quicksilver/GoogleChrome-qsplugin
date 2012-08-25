@@ -104,9 +104,17 @@
                 [children addObjectsFromArray:[self createObjectsForChildren:child deep:deep]];
             }
         } else if ([type isEqualToString:@"url"]) {
-            [children addObject:[QSObject
-                                 URLObjectWithURL:[child objectForKey:@"url"]
-                                 title:[child objectForKey:@"name"]]];
+            NSString *bookmarkName = [child objectForKey:@"name"];
+
+            QSObject *bookmark = [QSObject
+                                  URLObjectWithURL:[child objectForKey:@"url"]
+                                  title:bookmarkName];
+            [bookmark setLabel:bookmarkName];
+            [bookmark setName:[NSString stringWithFormat:@"%@ in %@",
+                               bookmarkName,
+                               [bookmarkFolder objectForKey:@"name"]]];
+
+            [children addObject:bookmark];
         }
     }
     
