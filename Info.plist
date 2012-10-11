@@ -277,6 +277,7 @@
 				<string>QSGoogleChromeProxies</string>
 				<key>types</key>
 				<array>
+					<string>qs.url.search</string>
 					<string>Apple URL pasteboard type</string>
 					<string>NSStringPboardType</string>
 				</array>
