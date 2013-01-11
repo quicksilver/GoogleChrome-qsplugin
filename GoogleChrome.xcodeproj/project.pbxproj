@@ -49,7 +49,7 @@
 
 /* Begin PBXFileReference section */
 		E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Chrome Folder.icns"; sourceTree = "<group>"; };
-		E13437461550044000B7A533 /* QSGoogleChromeSearchEnginesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; path = QSGoogleChromeSearchEnginesParser.h; sourceTree = "<group>"; };
+		E13437461550044000B7A533 /* QSGoogleChromeSearchEnginesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeSearchEnginesParser.h; sourceTree = "<group>"; };
 		E13437471550044000B7A533 /* QSGoogleChromeSearchEnginesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeSearchEnginesParser.m; sourceTree = "<group>"; };
 		E134374B15500CC900B7A533 /* License.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = License.html; sourceTree = "<group>"; };
 		E134374C15500CC900B7A533 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
@@ -386,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				GCC_FAST_MATH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
