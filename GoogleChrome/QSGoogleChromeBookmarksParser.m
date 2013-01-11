@@ -42,13 +42,17 @@
     
     for (key in roots) {
         bookmark = [roots objectForKey:key];
-        bookmarkChildren = [bookmark objectForKey:@"children"];
-        
-        // Only add non-empty roots
-        if ([bookmarkChildren count] > 0) {
-            [array addObject:[self createFolderObject:bookmark]];
-            if (deep) {
-                [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep]];
+
+        // Only handle proper sub objects
+        if ([bookmark isKindOfClass:[NSDictionary class]]) {
+            bookmarkChildren = [bookmark objectForKey:@"children"];
+
+            // Only add non-empty roots
+            if ([bookmarkChildren count] > 0) {
+                [array addObject:[self createFolderObject:bookmark]];
+                if (deep) {
+                    [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep]];
+                }
             }
         }
     }
