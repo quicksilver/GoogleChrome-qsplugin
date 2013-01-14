@@ -109,15 +109,12 @@
             }
         } else if ([type isEqualToString:@"url"]) {
             NSString *bookmarkName = [child objectForKey:@"name"];
-            NSString *url = [child objectForKey:@"url"];
 
             QSObject *bookmark = [QSObject
-                                  URLObjectWithURL:url
+                                  URLObjectWithURL:[child objectForKey:@"url"]
                                   title:bookmarkName];
-
             [bookmark setLabel:bookmarkName];
-            [bookmark setName:[NSString stringWithFormat:@"%@ - %@ in %@",
-                               url,
+            [bookmark setName:[NSString stringWithFormat:@"%@ in %@",
                                bookmarkName,
                                [bookmarkFolder objectForKey:@"name"]]];
 
