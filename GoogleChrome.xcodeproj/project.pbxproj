@@ -270,7 +270,7 @@
 		E15A5A9A152B5742008A0CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = stdin.se;
 			};
 			buildConfigurationList = E15A5A9D152B5742008A0CEA /* Build configuration list for PBXProject "GoogleChrome" */;
@@ -364,6 +364,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E15A5AB3152B5742008A0CEA /* Debug.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 			};
 			name = Debug;
 		};
@@ -371,6 +376,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E15A5AB7152B5742008A0CEA /* Release.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 			};
 			name = Release;
 		};
@@ -378,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -386,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_FAST_MATH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
