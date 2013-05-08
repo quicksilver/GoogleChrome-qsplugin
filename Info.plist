@@ -104,6 +104,7 @@
 		<key>relatedBundles</key>
 		<array>
 			<string>com.google.Chrome</string>
+			<string>com.google.Chrome.canary</string>
 		</array>
 	</dict>
 	<key>QSPresetAdditions</key>
@@ -298,18 +299,6 @@
 			<key>com.google.Chrome</key>
 			<string>QSGoogleChromeActions</string>
 		</dict>
-	</dict>
-	<key>QSRequirements</key>
-	<dict>
-		<key>bundles</key>
-		<array>
-			<dict>
-				<key>id</key>
-				<string>com.google.Chrome</string>
-				<key>name</key>
-				<string>Google Chrome</string>
-			</dict>
-		</array>
 	</dict>
 	<key>QSResourceAdditions</key>
 	<dict>
