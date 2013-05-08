@@ -100,7 +100,7 @@
 &lt;h3 id=&quot;additional-information&quot;&gt;Additional information&lt;/h3&gt;
 &lt;p&gt;The icon used for the bookmarks folder is created by &lt;a href=&quot;http://ermonas.deviantart.com/&quot;&gt;Ernesto Monasterio&lt;/a&gt;, and can be found &lt;a href=&quot;http://ermonas.deviantart.com/art/Google-Chrome-Folder-Icon-201492913&quot;&gt;Here&lt;/a&gt;. The icon is licensed under a &lt;a href=&quot;http://creativecommons.org/licenses/by-nc-sa/3.0/&quot;&gt;Creative Commons Attribution-Noncommercial-Share Alike 3.0 License&lt;/a&gt;.&lt;/p&gt;</string>
 		<key>icon</key>
-		<string>com.google.Chrome</string>
+		<string>ChromeIcon</string>
 		<key>relatedBundles</key>
 		<array>
 			<string>com.google.Chrome</string>
@@ -260,7 +260,7 @@
 				<key>proxyType</key>
 				<string>page</string>
 				<key>icon</key>
-				<string>com.google.Chrome</string>
+				<string>ChromeIcon</string>
 				<key>name</key>
 				<string>Current Web Page (Chrome)</string>
 				<key>details</key>
@@ -281,7 +281,7 @@
 				<key>proxyType</key>
 				<string>page</string>
 				<key>icon</key>
-				<string>com.google.Chrome.canary</string>
+				<string>ChromeCanaryIcon</string>
 				<key>name</key>
 				<string>Current Web Page (Chrome Canary)</string>
 				<key>details</key>
@@ -302,7 +302,7 @@
 				<key>proxyType</key>
 				<string>site</string>
 				<key>icon</key>
-				<string>com.google.Chrome</string>
+				<string>ChromeIcon</string>
 				<key>name</key>
 				<string>Current Website (Chrome)</string>
 				<key>details</key>
@@ -323,7 +323,7 @@
 				<key>proxyType</key>
 				<string>site</string>
 				<key>icon</key>
-				<string>com.google.Chrome.canary</string>
+				<string>ChromeCanaryIcon</string>
 				<key>name</key>
 				<string>Current Website (Chrome Canary)</string>
 				<key>details</key>
@@ -356,6 +356,20 @@
 	</dict>
 	<key>QSResourceAdditions</key>
 	<dict>
+		<key>ChromeIcon</key>
+		<dict>
+			<key>bundle</key>
+			<string>com.google.Chrome</string>
+			<key>resource</key>
+			<string>app.icns</string>
+		</dict>
+		<key>ChromeCanaryIcon</key>
+		<dict>
+			<key>bundle</key>
+			<string>com.google.Chrome.canary</string>
+			<key>resource</key>
+			<string>app.icns</string>
+		</dict>
 		<key>ChromeFolder</key>
 		<dict>
 			<key>bundle</key>
