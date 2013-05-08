@@ -225,6 +225,8 @@
 		<dict>
 			<key>com.google.Chrome</key>
 			<string>QSGoogleChromeObjectSource</string>
+			<key>com.google.Chrome.canary</key>
+			<string>QSGoogleChromeCanaryObjectSource</string>
 		</dict>
 		<key>QSFSParsers</key>
 		<dict>

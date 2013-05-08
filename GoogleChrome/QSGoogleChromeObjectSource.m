@@ -11,6 +11,12 @@
 @implementation QSGoogleChromeObjectSource
 
 
+- (NSString *)getAppName { return @"Chrome"; }
+- (NSString *)getBundle { return kQSGoogleChromeBundle; }
+- (NSString *)getBundleIcon { return @"ChromeIcon"; }
+- (NSString *)getProfileDirectory { return @"~/Library/Application Support/Google/Chrome/Default"; }
+
+
 /*
  Always rescan the catalog entries provided by this object source
  */
@@ -44,25 +50,29 @@
         
         // Search engines
         [children addObject:[self createSearchEnginesObject]];
-        
+
         // The root bookmark folders
+        NSString *bookmarksFile = [NSString stringWithFormat:@"%@/Bookmarks", [self getProfileDirectory]];
         QSGoogleChromeBookmarksParser *bookmarksParser = [[[QSGoogleChromeBookmarksParser alloc] init] autorelease];
-        [children addObjectsFromArray:[bookmarksParser loadBookmarksFrom:kQSGoogleChromeBookmarksFile deep:NO]];
+        [children addObjectsFromArray:[bookmarksParser loadBookmarksFrom:bookmarksFile deep:NO]];
         
         // History
-        QSObject *history = [QSObject objectWithName:kQSGoogleChromeHistoryName];
+        QSObject *history = [QSObject objectWithName:@"History"];
         
         [history setPrimaryType:kQSGoogleChromeHistory];
-        [history setObject:kQSGoogleChromeHistoryName forType:kQSGoogleChromeHistory];
+        [history setObject:@"History" forType:kQSGoogleChromeHistory];
+        [history setObject:[self getProfileDirectory] forMeta:@"profileDirectory"];
         [children addObject:history];
         
         [object setChildren:children];
         return YES;
         
     } else if ([[object primaryType] isEqualToString:kQSGoogleChromeOpenWebPages]) {
-        if (QSAppIsRunning(kQSGoogleChromeBundle)) {
+        NSString *bundle = [object objectForMeta:@"bundle"];
+        
+        if (QSAppIsRunning(bundle)) {
             // Add urls from all open tabs
-            GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+            GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:bundle];
             QSObject *child;
             int tabIndex;
             
@@ -99,17 +109,19 @@
         return YES;
     } else if ([[object primaryType] isEqualToString:kQSGoogleChromeHistory]) {
         // History entries
+        NSString *profileDirectory = [object objectForMeta:@"profileDirectory"];
         QSGoogleChromeHistoryParser *parser = [[[QSGoogleChromeHistoryParser alloc] init] autorelease];
         
-        [children addObjectsFromArray:[parser allHistoryEntriesFromDB:kQSGoogleChromeHistoryFile]];
+        [children addObjectsFromArray:[parser allHistoryEntriesFromDB:[NSString stringWithFormat:@"%@/History", profileDirectory]]];
         [object setChildren:children];
         
         return YES;
     } else if ([[object primaryType] isEqualToString:kQSGoogleChromeSearchEngines]) {
         // Search engines
+        NSString *profileDirectory = [object objectForMeta:@"profileDirectory"];
         QSGoogleChromeSearchEnginesParser *parser = [[[QSGoogleChromeSearchEnginesParser alloc] init] autorelease];
         
-        [children addObjectsFromArray:[parser allSearchesFromDB:kQSGoogleChromeWebDataFile]];
+        [children addObjectsFromArray:[parser allSearchesFromDB:[NSString stringWithFormat:@"%@/Web Data", profileDirectory]]];
         [object setChildren:children];
         
         return YES;
@@ -124,11 +136,7 @@
  */
 - (void)setQuickIconForObject:(QSObject *)object {
     NSString *type = [object primaryType];
-    if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
-        [object setIcon:[QSResourceManager imageNamed:kQSGoogleChromeBundle]];
-    } else if ([type isEqualToString:kQSGoogleChromeSearchEngines]) {
-            [object setIcon:[QSResourceManager imageNamed:kQSGoogleChromeBundle]];
-    } else if ([type isEqualToString:kQSGoogleChromeBookmarkFolder]) {
+    if ([type isEqualToString:kQSGoogleChromeBookmarkFolder]) {
         [object setIcon:[QSResourceManager imageNamed:@"ChromeFolder"]]; 
     } else if ([type isEqualToString:kQSGoogleChromeHistory]) {
         [object setIcon:[QSResourceManager imageNamed:@"ChromeFolder"]]; 
@@ -170,14 +178,19 @@
 }
 
 
+
+
 /*
  Creates the QS object for the current open web pages
  */
 - (QSObject *)createOpenPagesObject {
-    QSObject *object = [QSObject objectWithName:kQSGoogleChromeOpenWebPagesName];
+    NSString *name = [NSString stringWithFormat:@"Open Web Pages (%@)", [self getAppName]];
+    QSObject *object = [QSObject objectWithName:name];
     
     [object setPrimaryType:kQSGoogleChromeOpenWebPages];
-    [object setObject:kQSGoogleChromeOpenWebPagesName forType:kQSGoogleChromeOpenWebPages];
+    [object setObject:name forType:kQSGoogleChromeOpenWebPages];
+    [object setIcon:[QSResourceManager imageNamed:[self getBundleIcon]]];
+    [object setObject:[self getBundle] forMeta:@"bundle"];
     
     return object;
 }
@@ -187,13 +200,26 @@
  Creates the QS object for Chrome's search engines
  */
 - (QSObject *)createSearchEnginesObject {
-    QSObject *object = [QSObject objectWithName:kQSGoogleChromeSearchEnginesName];
+    NSString *name = [NSString stringWithFormat:@"Search Engines (%@)", [self getAppName]];
+    QSObject *object = [QSObject objectWithName:name];
     
     [object setPrimaryType:kQSGoogleChromeSearchEngines];
-    [object setObject:kQSGoogleChromeSearchEnginesName forType:kQSGoogleChromeSearchEngines];
+    [object setObject:name forType:kQSGoogleChromeSearchEngines];
+    [object setIcon:[QSResourceManager imageNamed:[self getBundleIcon]]];
+    [object setObject:[self getProfileDirectory] forMeta:@"profileDirectory"];
     
     return object;
 }
 
+
+@end
+
+
+@implementation QSGoogleChromeCanaryObjectSource
+
+- (NSString *)getAppName { return @"Chrome Canary"; }
+- (NSString *)getBundle { return kQSGoogleChromeCanaryBundle; }
+- (NSString *)getBundleIcon { return @"ChromeCanaryIcon"; }
+- (NSString *)getProfileDirectory { return @"~/Library/Application Support/Google/Chrome Canary/Default"; }
 
 @end
