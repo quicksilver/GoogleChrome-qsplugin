@@ -17,14 +17,16 @@
  */
 - (id)resolveProxyObject:(id)proxy {
     
-    if (QSAppIsRunning(kQSGoogleChromeBundle)) {
-        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+    NSDictionary *settings = (NSDictionary *)[proxy objectForType:QSProxyType];
+    NSString *bundle = [settings objectForKey:@"bundle"];
+    NSString *type = [settings objectForKey:@"proxyType"];
+    
+    if (QSAppIsRunning(bundle)) {
+        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:bundle];
         GoogleChromeWindow *currentWindow = [[chrome windows] objectAtIndex:0];
         GoogleChromeTab *currentTab = [currentWindow activeTab];
         
-        NSString *identifier = [proxy identifier];
-        
-        if ([identifier isEqualToString:kQSGoogleChromeFrontPageProxy] && currentTab.URL) {
+        if ([type isEqualToString:@"page"] && currentTab.URL) {
             QSObject *frontPage = [QSObject URLObjectWithURL:currentTab.URL title:currentTab.title];
             
             [frontPage setObject:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -35,7 +37,7 @@
                          forType:kQSGoogleChromeTab];
             
             return frontPage;
-        } else if ([identifier isEqualToString:kQSGoogleChromeSearchCurrentSiteProxy] && currentTab.URL) {
+        } else if ([type isEqualToString:@"site"] && currentTab.URL) {
             NSURL *currentURL = [NSURL URLWithString:currentTab.URL];
             NSString *searchShortcut = [NSString stringWithFormat:@"http://www.google.com/search?q=*** site:%@", 
                                         [currentURL host]];
@@ -53,16 +55,8 @@
  Sets the details for the current front page proxies
  */
 - (NSString *)detailsOfObject:(QSObject *)object {
-    
-    NSString *identifier = [object identifier];
-    
-    if ([identifier isEqualToString:kQSGoogleChromeFrontPageProxy]) {
-        return @"The URL of the page open in Chrome";
-    } else if ([identifier isEqualToString:kQSGoogleChromeSearchCurrentSiteProxy]) {
-        return @"Search the site open in Chrome";
-    }
-    
-    return nil;
+    NSDictionary *settings = (NSDictionary *)[object objectForType:QSProxyType];
+    return [settings objectForKey:@"details"];
 }
 
 

@@ -17,10 +17,6 @@
 // Types
 #define kQSGoogleChromeTab @"com.google.Chrome.tab"
 
-// Proxies
-#define kQSGoogleChromeFrontPageProxy @"QSGoogleChromeFrontPageProxy"
-#define kQSGoogleChromeSearchCurrentSiteProxy @"QSGoogleChromeSearchCurrentSiteProxy"
-
 // Child objects
 #define kQSGoogleChromeOpenWebPages @"com.google.Chrome.openPages"
 #define kQSGoogleChromeOpenWebPagesName @"Open Web Pages (Chrome)"

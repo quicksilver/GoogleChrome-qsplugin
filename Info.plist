@@ -255,10 +255,37 @@
 		<dict>
 			<key>QSGoogleChromeFrontPageProxy</key>
 			<dict>
+				<key>bundle</key>
+				<string>com.google.Chrome</string>
+				<key>proxyType</key>
+				<string>page</string>
 				<key>icon</key>
 				<string>com.google.Chrome</string>
 				<key>name</key>
 				<string>Current Web Page (Chrome)</string>
+				<key>details</key>
+				<string>The URL of the page open in Chrome Canary</string>
+				<key>providerClass</key>
+				<string>QSGoogleChromeProxies</string>
+				<key>types</key>
+				<array>
+					<string>Apple URL pasteboard type</string>
+					<string>NSStringPboardType</string>
+					<string>com.google.Chrome.tab</string>
+				</array>
+			</dict>
+			<key>QSGoogleChromeCanaryFrontPageProxy</key>
+			<dict>
+				<key>bundle</key>
+				<string>com.google.Chrome.canary</string>
+				<key>proxyType</key>
+				<string>page</string>
+				<key>icon</key>
+				<string>com.google.Chrome.canary</string>
+				<key>name</key>
+				<string>Current Web Page (Chrome Canary)</string>
+				<key>details</key>
+				<string>The URL of the page open in Chrome Canary</string>
 				<key>providerClass</key>
 				<string>QSGoogleChromeProxies</string>
 				<key>types</key>
@@ -270,10 +297,37 @@
 			</dict>
 			<key>QSGoogleChromeSearchCurrentSiteProxy</key>
 			<dict>
+				<key>bundle</key>
+				<string>com.google.Chrome</string>
+				<key>proxyType</key>
+				<string>site</string>
 				<key>icon</key>
 				<string>com.google.Chrome</string>
 				<key>name</key>
 				<string>Current Website (Chrome)</string>
+				<key>details</key>
+				<string>Search the site open in Chrome</string>
+				<key>providerClass</key>
+				<string>QSGoogleChromeProxies</string>
+				<key>types</key>
+				<array>
+					<string>qs.url.search</string>
+					<string>Apple URL pasteboard type</string>
+					<string>NSStringPboardType</string>
+				</array>
+			</dict>
+			<key>QSGoogleChromeCanarySearchCurrentSiteProxy</key>
+			<dict>
+				<key>bundle</key>
+				<string>com.google.Chrome.canary</string>
+				<key>proxyType</key>
+				<string>site</string>
+				<key>icon</key>
+				<string>com.google.Chrome.canary</string>
+				<key>name</key>
+				<string>Current Website (Chrome Canary)</string>
+				<key>details</key>
+				<string>Search the site open in Chrome Canary</string>
 				<key>providerClass</key>
 				<string>QSGoogleChromeProxies</string>
 				<key>types</key>
