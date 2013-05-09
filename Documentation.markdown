@@ -1,7 +1,9 @@
 ## Quicksilver Google Chrome plugin ##
 
 This plugin adds functionality for accessing different aspects of [Google
-Chrome](https://www.google.com/chrome) in Quicksilver.
+Chrome](https://www.google.com/chrome) in Quicksilver. If you have [Google
+Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html), all
+of the listed functionality has Canary equivalents.
 
 This plugin contains adapted code from the [Safari
 plugin](https://github.com/quicksilver/com.apple.Safari-qsplugin).
