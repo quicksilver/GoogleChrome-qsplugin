@@ -118,7 +118,7 @@
 					<key>ID</key>
 					<string>QSPresetGoogleChromeOpenPages</string>
 					<key>icon</key>
-					<string>com.google.Chrome</string>
+					<string>ChromeIcon</string>
 					<key>name</key>
 					<string>Open Web Pages</string>
 					<key>source</key>
@@ -128,7 +128,7 @@
 					<key>ID</key>
 					<string>QSPresetGoogleChromeBookmarks</string>
 					<key>icon</key>
-					<string>com.google.Chrome</string>
+					<string>ChromeIcon</string>
 					<key>name</key>
 					<string>Chrome Bookmarks</string>
 					<key>settings</key>
@@ -153,7 +153,7 @@
 					<key>ID</key>
 					<string>QSPresetGoogleChromeHistory</string>
 					<key>icon</key>
-					<string>com.google.Chrome</string>
+					<string>ChromeIcon</string>
 					<key>name</key>
 					<string>Chrome History</string>
 					<key>settings</key>
@@ -180,7 +180,7 @@
 					<key>ID</key>
 					<string>QSPresetGoogleChromeSearchEngines</string>
 					<key>icon</key>
-					<string>com.google.Chrome</string>
+					<string>ChromeIcon</string>
 					<key>name</key>
 					<string>Chrome Search Engines</string>
 					<key>settings</key>
@@ -203,11 +203,113 @@
 				</dict>
 			</array>
 			<key>icon</key>
-			<string>com.google.Chrome</string>
+			<string>ChromeIcon</string>
 			<key>name</key>
 			<string>Google Chrome</string>
 			<key>requiresBundle</key>
 			<string>com.google.Chrome</string>
+			<key>source</key>
+			<string>QSGroupObjectSource</string>
+		</dict>
+		<dict>
+			<key>ID</key>
+			<string>QSPresetGoogleChromeCanaryGroup</string>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeOpenPages_Canary</string>
+					<key>icon</key>
+					<string>ChromeCanaryIcon</string>
+					<key>name</key>
+					<string>Open Web Pages</string>
+					<key>source</key>
+					<string>QSGoogleChromeCanaryObjectSource</string>
+				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeCanaryBookmarks</string>
+					<key>icon</key>
+					<string>ChromeCanaryIcon</string>
+					<key>name</key>
+					<string>Chrome Canary Bookmarks</string>
+					<key>settings</key>
+					<dict>
+						<key>fileContents</key>
+						<string>Chrome Bookmarks</string>
+						<key>parser</key>
+						<string>QSGoogleChromeBookmarksParser</string>
+						<key>path</key>
+						<string>~/Library/Application Support/Google/Chrome Canary/Default/Bookmarks</string>
+						<key>scanContents</key>
+						<integer>1</integer>
+						<key>skipItem</key>
+						<integer>1</integer>
+						<key>watchTarget</key>
+						<true/>
+					</dict>
+					<key>source</key>
+					<string>QSFileSystemObjectSource</string>
+				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeCanaryHistory</string>
+					<key>icon</key>
+					<string>ChromeCanaryIcon</string>
+					<key>name</key>
+					<string>Chrome Canary History</string>
+					<key>settings</key>
+					<dict>
+						<key>fileContents</key>
+						<string>Chrome History</string>
+						<key>parser</key>
+						<string>QSGoogleChromeHistoryParser</string>
+						<key>historySize</key>
+						<integer>300</integer>
+						<key>path</key>
+						<string>~/Library/Application Support/Google/Chrome Canary/Default/History</string>
+						<key>skipItem</key>
+						<integer>1</integer>
+						<key>watchTarget</key>
+						<true/>
+					</dict>
+					<key>source</key>
+					<string>QSFileSystemObjectSource</string>
+					<key>enabled</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>ID</key>
+					<string>QSPresetGoogleChromeCanarySearchEngines</string>
+					<key>icon</key>
+					<string>ChromeCanaryIcon</string>
+					<key>name</key>
+					<string>Chrome Canary Search Engines</string>
+					<key>settings</key>
+					<dict>
+						<key>fileContents</key>
+						<string>Chrome Search Engines</string>
+						<key>parser</key>
+						<string>QSGoogleChromeSearchEnginesParser</string>
+						<key>path</key>
+						<string>~/Library/Application Support/Google/Chrome Canary/Default/Web Data</string>
+						<key>skipItem</key>
+						<integer>1</integer>
+						<key>watchTarget</key>
+						<true/>
+					</dict>
+					<key>source</key>
+					<string>QSFileSystemObjectSource</string>
+					<key>enabled</key>
+					<false/>
+				</dict>
+			</array>
+			<key>icon</key>
+			<string>ChromeCanaryIcon</string>
+			<key>name</key>
+			<string>Google Chrome Canary</string>
+			<key>requiresBundle</key>
+			<string>com.google.Chrome.canary</string>
 			<key>source</key>
 			<string>QSGroupObjectSource</string>
 		</dict>
@@ -252,6 +354,8 @@
 		<dict>
 			<key>QSGoogleChromeObjectSource</key>
 			<string>QSGoogleChromeObjectSource</string>
+			<key>QSGoogleChromeCanaryObjectSource</key>
+			<string>QSGoogleChromeCanaryObjectSource</string>
 		</dict>
 		<key>QSProxies</key>
 		<dict>

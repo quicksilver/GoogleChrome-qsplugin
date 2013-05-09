@@ -29,7 +29,7 @@
  Provides catalog entries for the current open web pages object
  */
 - (NSArray *)objectsForEntry:(NSDictionary *)theEntry {
-    if ([[theEntry objectForKey:@"ID"] isEqualToString:@"QSPresetGoogleChromeOpenPages"]) {
+    if ([[theEntry objectForKey:@"ID"] hasPrefix:@"QSPresetGoogleChromeOpenPages"]) {
 		return [NSArray arrayWithObject:[self createOpenPagesObject]];
     }
     return nil;
