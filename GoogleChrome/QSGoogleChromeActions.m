@@ -11,11 +11,14 @@
 @implementation QSGoogleChromeActions
 
 
+- (NSString *)getBundle { return kQSGoogleChromeBundle; }
+
+
 /*
  Runs javascript in the current tab, required by the interface for web browser mediators
  */
 - (void)performJavaScript:(NSString *)jScript {
-    GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+    GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:[self getBundle]];
     GoogleChromeTab *currentTab = [[[chrome windows] objectAtIndex:0] activeTab];
     [currentTab executeJavascript:jScript];
 }
@@ -30,8 +33,9 @@
     if (tabInfo) {
         GoogleChromeWindow *window = [tabInfo objectForKey:@"window"];
         NSNumber *tabIndex = [tabInfo objectForKey:@"tabIndex"];
+        NSString *bundle = [tabInfo objectForKey:@"bundle"];
         
-        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:kQSGoogleChromeBundle];
+        GoogleChromeApplication *chrome = [SBApplication applicationWithBundleIdentifier:bundle];
         [chrome activate];
         [window setActiveTabIndex:[tabIndex intValue]];
         [window setIndex:1];
@@ -55,5 +59,11 @@
     return nil;
 }
 
+
+@end
+
+@implementation QSGoogleChromeCanaryActions
+
+- (NSString *)getBundle { return kQSGoogleChromeCanaryBundle; }
 
 @end

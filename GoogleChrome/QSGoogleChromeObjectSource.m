@@ -82,6 +82,7 @@
                 for (GoogleChromeTab *tab in [window tabs]) {
                     child = [QSObject URLObjectWithURL:tab.URL title:tab.title];
                     [child setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                      bundle, @"bundle",
                                       tab, @"tab",
                                       window, @"window",
                                       [NSNumber numberWithInt:tabIndex], @"tabIndex",

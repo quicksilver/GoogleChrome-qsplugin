@@ -30,6 +30,7 @@
             QSObject *frontPage = [QSObject URLObjectWithURL:currentTab.URL title:currentTab.title];
             
             [frontPage setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                  bundle, @"bundle",
                                   currentTab, @"tab",
                                   currentWindow, @"window",
                                   [NSNumber numberWithInt:[currentWindow activeTabIndex]], @"tabIndex",

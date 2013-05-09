@@ -11,8 +11,14 @@
 
 @interface QSGoogleChromeActions : NSObject
 
+- (NSString *)getBundle;
+
 - (void)performJavaScript:(NSString *)jScript;
 - (QSObject *)revealTab:(QSObject *)directObj;
 - (QSObject *)reloadTab:(QSObject *)directObj;
+
+@end
+
+@interface QSGoogleChromeCanaryActions : QSGoogleChromeActions
 
 @end

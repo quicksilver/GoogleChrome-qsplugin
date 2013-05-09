@@ -36,10 +36,8 @@
 			<array>
 				<string>com.google.Chrome.tab</string>
 			</array>
-			<key>icon</key>
-			<string>com.google.Chrome</string>
 			<key>name</key>
-			<string>Reveal tab in Chrome</string>
+			<string>Reveal tab</string>
 		</dict>
 		<key>QSGoogleChromeReloadTab</key>
 		<dict>
@@ -51,10 +49,8 @@
 			<array>
 				<string>com.google.Chrome.tab</string>
 			</array>
-			<key>icon</key>
-			<string>com.google.Chrome</string>
 			<key>name</key>
-			<string>Reload tab in Chrome</string>
+			<string>Reload tab</string>
 		</dict>
 	</dict>
 	<key>QSPlugIn</key>
@@ -79,19 +75,14 @@
 &lt;li&gt;&lt;strong&gt;Bookmarks&lt;/strong&gt; - The top level bookmarks and bookmark folders from Chrome. Also available when right arrowing into the Chrome application&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;History&lt;/strong&gt; - The 300 latest history entries in Chrome, disabled by default. The number in the catalog is limited to 300 for performance reasons. The history entries are also available when right arrowing into the Chrome application, and it includes all of the history, no limits.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Search engines&lt;/strong&gt; - All search engines registered in Chrome, disabled by default. They are searchable both by their names and their keywords, and are also available when right arrowing into the Chrome application.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
+&lt;/ul&gt;&lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
 &lt;p&gt;The following actions are available:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reveal tab in Chrome&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;, or &amp;quot;Current Web Page&amp;quot;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reload tab in Chrome&lt;/strong&gt; - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;, or &amp;quot;Current Web Page&amp;quot;.&lt;/li&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Reveal tab&lt;/strong&gt; - Activates the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;, or &amp;quot;Current Web Page&amp;quot;.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Reload tab&lt;/strong&gt; - Reloads the tab in Chrome that contains the selected web page. This is only available for Chrome Tab types, i.e. the listing under &amp;quot;Open web pages&amp;quot;, or &amp;quot;Current Web Page&amp;quot;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;proxies&quot;&gt;Proxies&lt;/h3&gt;
 &lt;p&gt;The following proxies are available:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Current Web Page&lt;/strong&gt; - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Current Web Site&lt;/strong&gt; - A web search on the site displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Current Web Page&lt;/strong&gt; - The web page currently displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Current Web Site&lt;/strong&gt; - A web search on the site displayed in the frontmost tab of the frontmost window in Chrome.&lt;/li&gt;&lt;/ul&gt;
 &lt;h3 id=&quot;types&quot;&gt;Types&lt;/h3&gt;
 &lt;p&gt;The following new types are defined:&lt;/p&gt;
 &lt;ul&gt;
@@ -322,6 +313,8 @@
 			<string>QSGoogleChromeProxies</string>
 			<key>QSGoogleChromeActions</key>
 			<string>QSGoogleChromeActions</string>
+			<key>QSGoogleChromeCanaryActions</key>
+			<string>QSGoogleChromeCanaryActions</string>
 		</dict>
 		<key>QSBundleChildHandlers</key>
 		<dict>
@@ -449,7 +442,7 @@
 			<key>com.google.Chrome.tab</key>
 			<dict>
 				<key>icon</key>
-				<string>com.google.Chrome</string>
+				<string>ChromeIcon</string>
 				<key>name</key>
 				<string>Chrome Tab</string>
 			</dict>
@@ -458,6 +451,8 @@
 		<dict>
 			<key>com.google.Chrome</key>
 			<string>QSGoogleChromeActions</string>
+			<key>com.google.Chrome.canary</key>
+			<string>QSGoogleChromeCanaryActions</string>
 		</dict>
 	</dict>
 	<key>QSResourceAdditions</key>
