@@ -25,22 +25,22 @@
                         
                         [[settings objectForKey:@"historySize"] intValue]
                         ];
-    return [self createObjectsFromQuery:query inDatabase:path];
+    return [self createObjectsFromQuery:query inDatabase:path withBundle:[settings objectForKey:@"sourceBundle"]];
 }
 
 
 /*
  All history entries
  */
-- (NSArray *)allHistoryEntriesFromDB:(NSString *)path {
-    return [self createObjectsFromQuery:@"select id, url, title from urls order by last_visit_time desc" inDatabase:path];
+- (NSArray *)allHistoryEntriesFromDB:(NSString *)path withBundle:(NSString *)bundle {
+    return [self createObjectsFromQuery:@"select id, url, title from urls order by last_visit_time desc" inDatabase:path withBundle:bundle];
 }
 
 
 /*
  Generates QS objects from history entries returned by a query
  */
-- (NSArray *)createObjectsFromQuery:(NSString *)query inDatabase:(NSString *)path {
+- (NSArray *)createObjectsFromQuery:(NSString *)query inDatabase:(NSString *)path withBundle:(NSString *)bundle {
     NSMutableArray *objects = [NSMutableArray arrayWithCapacity:0];
     
     FMDatabase *db = [QSGoogleChromeDatabaseManager openDatabase:[path stringByStandardizingPath]];
@@ -57,8 +57,14 @@
 	}
     
     while ([rs next]) {
-        [objects addObject:[QSObject URLObjectWithURL:[rs stringForColumn:@"url"]
-                                                title:[rs stringForColumn:@"title"]]];
+        QSObject *object = [QSObject URLObjectWithURL:[rs stringForColumn:@"url"]
+                                                title:[rs stringForColumn:@"title"]];
+
+        if (bundle) {
+            [object setObject:bundle forType:kQSGoogleChromeURL];
+        }
+
+        [objects addObject:object];
     }
     
     [rs close];

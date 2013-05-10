@@ -12,6 +12,6 @@
 
 @interface QSGoogleChromeHistoryParser : QSParser
 
-- (NSArray *)allHistoryEntriesFromDB:(NSString *)path;
+- (NSArray *)allHistoryEntriesFromDB:(NSString *)path withBundle:(NSString *)bundle;
 
 @end

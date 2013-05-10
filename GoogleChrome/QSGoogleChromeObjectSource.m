@@ -62,6 +62,7 @@
         [history setPrimaryType:kQSGoogleChromeHistory];
         [history setObject:@"History" forType:kQSGoogleChromeHistory];
         [history setObject:[self getProfileDirectory] forMeta:@"profileDirectory"];
+        [history setObject:[self getBundle] forMeta:@"bundle"];
         [children addObject:history];
         
         [object setChildren:children];
@@ -113,9 +114,10 @@
     } else if ([[object primaryType] isEqualToString:kQSGoogleChromeHistory]) {
         // History entries
         NSString *profileDirectory = [object objectForMeta:@"profileDirectory"];
+        NSString *bundle = [object objectForMeta:@"bundle"];
         QSGoogleChromeHistoryParser *parser = [[[QSGoogleChromeHistoryParser alloc] init] autorelease];
-        
-        [children addObjectsFromArray:[parser allHistoryEntriesFromDB:[NSString stringWithFormat:@"%@/History", profileDirectory]]];
+
+        [children addObjectsFromArray:[parser allHistoryEntriesFromDB:[NSString stringWithFormat:@"%@/History", profileDirectory] withBundle:bundle]];
         [object setChildren:children];
         
         return YES;
