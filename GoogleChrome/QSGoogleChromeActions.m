@@ -60,6 +60,25 @@
 }
 
 
+/*
+ Opens a Chrome URL in the source browser
+ */
+- (QSObject *)openURLInSourceBrowser:(QSObject *)urlObj {
+    NSString *bundle = [urlObj objectForType:kQSGoogleChromeURL];
+
+    NSWorkspace *ws = [NSWorkspace sharedWorkspace];
+
+    for (NSString *urlString in [urlObj arrayForType:QSURLType]) {
+        NSURL *url = [[NSURL URLWithString:[urlString URLEncoding]] URLByInjectingPasswordFromKeychain];
+        NSString *ident = [[NSBundle bundleWithIdentifier:bundle] bundleIdentifier];
+
+        [ws openURLs:[NSArray arrayWithObject:url] withAppBundleIdentifier:ident options:0 additionalEventParamDescriptor:nil launchIdentifiers:nil];
+    }
+
+    return nil;
+}
+
+
 @end
 
 @implementation QSGoogleChromeCanaryActions

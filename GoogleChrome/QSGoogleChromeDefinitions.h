@@ -13,6 +13,7 @@
 
 // Types
 #define kQSGoogleChromeTab @"com.google.Chrome.tab"
+#define kQSGoogleChromeURL @"com.google.Chrome.url"
 
 // Child objects
 #define kQSGoogleChromeOpenWebPages @"com.google.Chrome.openPages"

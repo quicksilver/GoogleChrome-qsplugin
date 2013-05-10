@@ -52,6 +52,21 @@
 			<key>name</key>
 			<string>Reload tab</string>
 		</dict>
+		<key>QSGoogleChromeOpenURLInSourceBrowser</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSGoogleChromeActions</string>
+			<key>actionSelector</key>
+			<string>openURLInSourceBrowser:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.google.Chrome.url</string>
+			</array>
+			<key>name</key>
+			<string>Open URL in Source Browser</string>
+			<key>description</key>
+			<string>Opens an URL in the browser it came from</string>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -445,6 +460,13 @@
 				<string>ChromeIcon</string>
 				<key>name</key>
 				<string>Chrome Tab</string>
+			</dict>
+			<key>com.google.Chrome.url</key>
+			<dict>
+				<key>icon</key>
+				<string>DefaultBookmarkIcon</string>
+				<key>name</key>
+				<string>URLs from Chrome</string>
 			</dict>
 		</dict>
 		<key>QSWebBrowserMediators</key>
