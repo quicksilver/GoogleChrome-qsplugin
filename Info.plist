@@ -151,6 +151,8 @@
 						<integer>1</integer>
 						<key>watchTarget</key>
 						<true/>
+						<key>sourceBundle</key>
+						<string>com.google.Chrome</string>
 					</dict>
 					<key>source</key>
 					<string>QSFileSystemObjectSource</string>
@@ -253,6 +255,8 @@
 						<integer>1</integer>
 						<key>watchTarget</key>
 						<true/>
+						<key>sourceBundle</key>
+						<string>com.google.Chrome.canary</string>
 					</dict>
 					<key>source</key>
 					<string>QSFileSystemObjectSource</string>

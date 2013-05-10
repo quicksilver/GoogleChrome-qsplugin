@@ -12,8 +12,8 @@
 
 @interface QSGoogleChromeBookmarksParser : QSParser
 
-- (NSArray *)loadBookmarksFrom:(NSString *)path deep:(BOOL)deep;
-- (QSObject *)createFolderObject:(NSDictionary *)bookmark;
-- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder deep:(BOOL)deep;
+- (NSArray *)loadBookmarksFrom:(NSString *)path deep:(BOOL)deep withBundle:(NSString *)bundle;
+- (QSObject *)createFolderObject:(NSDictionary *)bookmark withBundle:(NSString *)bundle;
+- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder deep:(BOOL)deep withBundle:(NSString *)bundle;
 
 @end

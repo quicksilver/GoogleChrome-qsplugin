@@ -23,14 +23,14 @@
  Quicksilver file system object source method.
  */
 - (NSArray *)objectsFromPath:(NSString *)path withSettings:(NSDictionary *)settings {
-    return [self loadBookmarksFrom:path deep:YES];
+    return [self loadBookmarksFrom:path deep:YES withBundle:[settings objectForKey:@"sourceBundle"]];
 }
 
 
 /*
  Load bookmarks the given path
  */
-- (NSArray *)loadBookmarksFrom:(NSString *)path deep:(BOOL)deep {
+- (NSArray *)loadBookmarksFrom:(NSString *)path deep:(BOOL)deep withBundle:(NSString *)bundle {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];
     
     NSData *jsonData = [NSData dataWithContentsOfFile:[path stringByStandardizingPath]];
@@ -49,9 +49,9 @@
 
             // Only add non-empty roots
             if ([bookmarkChildren count] > 0) {
-                [array addObject:[self createFolderObject:bookmark]];
+                [array addObject:[self createFolderObject:bookmark withBundle:bundle]];
                 if (deep) {
-                    [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep]];
+                    [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep withBundle:bundle]];
                 }
             }
         }
@@ -64,7 +64,7 @@
 /*
  Creates a Quicksilver object for a bookmarks folder
  */
-- (QSObject *)createFolderObject:(NSDictionary *)bookmark {
+- (QSObject *)createFolderObject:(NSDictionary *)bookmark withBundle:(NSString *)bundle {
     QSObject *folder= [QSObject objectWithName:[bookmark objectForKey:@"name"]];
     
     [folder setIdentifier:[bookmark objectForKey:@"id"]];
@@ -73,6 +73,10 @@
     [folder setObject:bookmark forType:kQSGoogleChromeBookmarkFolder];
     [folder setObject:@"" forMeta:kQSObjectDefaultAction];
     
+    if (bundle) {
+        [folder setObject:bundle forType:kQSGoogleChromeURL];
+    }
+
     // Load all urls from the children
     NSArray *children = [bookmark objectForKey:@"children"];
     NSMutableArray *urls = [NSMutableArray arrayWithCapacity:1];
@@ -93,7 +97,7 @@
  Creates Quicksilver objects for all the children in a
  bookmark folder.
  */
-- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder deep:(BOOL)deep {
+- (NSArray *)createObjectsForChildren:(NSDictionary *)bookmarkFolder deep:(BOOL)deep withBundle:(NSString *)bundle {
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
     
     NSDictionary *child;
@@ -103,9 +107,9 @@
         type = [child objectForKey:@"type"];
         
         if ([type isEqualToString:@"folder"]) {
-            [children addObject:[self createFolderObject:child]];
+            [children addObject:[self createFolderObject:child withBundle:bundle]];
             if (deep) {
-                [children addObjectsFromArray:[self createObjectsForChildren:child deep:deep]];
+                [children addObjectsFromArray:[self createObjectsForChildren:child deep:deep withBundle:bundle]];
             }
         } else if ([type isEqualToString:@"url"]) {
             NSString *bookmarkName = [child objectForKey:@"name"];
@@ -117,6 +121,10 @@
             [bookmark setName:[NSString stringWithFormat:@"%@ in %@",
                                bookmarkName,
                                [bookmarkFolder objectForKey:@"name"]]];
+
+            if (bundle) {
+                [bookmark setObject:bundle forType:kQSGoogleChromeURL];
+            }
 
             [children addObject:bookmark];
         }
