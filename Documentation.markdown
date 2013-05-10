@@ -35,6 +35,11 @@ The following actions are available:
 * **Reload tab** - Reloads the tab in Chrome that contains the selected web
   page. This is only available for Chrome Tab types, i.e. the listing under
   "Open web pages", or "Current Web Page".
+* **Open URL in Source Browser** - Opens the URL in the browser from whence it
+  came. This is only available for URLs from Chrome (see Types below), typically
+  as a bookmark or a history entry. This can be used to open bookmarks from a
+  browser in that browser and is useful if your main browser is not Chrome or
+  Chrome Canary.
 
 ### Proxies ###
 
@@ -51,6 +56,9 @@ The following new types are defined:
 
 * **Chrome Tab** - A currently open tab in Chrome. Used as secondary type on
   URLs coming from Chrome tabs.
+* **URLs from Chrome** - An URL coming from Chrome, either as a history entry or
+  a bookmark or a bookmark folder. A secondary type for keeping track of the
+  source of the URL.
 
 ### Additional information ###
 
