@@ -386,6 +386,7 @@
 					<string>Apple URL pasteboard type</string>
 					<string>NSStringPboardType</string>
 					<string>com.google.Chrome.tab</string>
+					<string>com.google.Chrome.url</string>
 				</array>
 			</dict>
 			<key>QSGoogleChromeCanaryFrontPageProxy</key>
@@ -407,6 +408,7 @@
 					<string>Apple URL pasteboard type</string>
 					<string>NSStringPboardType</string>
 					<string>com.google.Chrome.tab</string>
+					<string>com.google.Chrome.url</string>
 				</array>
 			</dict>
 			<key>QSGoogleChromeSearchCurrentSiteProxy</key>

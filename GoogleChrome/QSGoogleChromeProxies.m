@@ -37,6 +37,8 @@
                                   nil ]
                          forType:kQSGoogleChromeTab];
             
+            [frontPage setObject:bundle forType:kQSGoogleChromeURL];
+
             return frontPage;
         } else if ([type isEqualToString:@"site"] && currentTab.URL) {
             NSURL *currentURL = [NSURL URLWithString:currentTab.URL];

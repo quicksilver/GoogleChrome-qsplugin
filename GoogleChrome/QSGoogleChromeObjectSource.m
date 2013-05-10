@@ -88,6 +88,7 @@
                                       [NSNumber numberWithInt:tabIndex], @"tabIndex",
                                       nil ]
                              forType:kQSGoogleChromeTab];
+                    [child setObject:bundle forType:kQSGoogleChromeURL];
                     
                     [children addObject:child];
                     tabIndex++;
