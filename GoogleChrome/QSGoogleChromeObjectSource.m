@@ -81,7 +81,8 @@
                 tabIndex = 1;
                 
                 for (GoogleChromeTab *tab in [window tabs]) {
-                    child = [QSObject URLObjectWithURL:tab.URL title:tab.title];
+                    child = [QSObject URLObjectWithURL:tab.URL title:nil];
+                    [child setLabel:tab.title];
                     [child setObject:[NSDictionary dictionaryWithObjectsAndKeys:
                                       bundle, @"bundle",
                                       tab, @"tab",
