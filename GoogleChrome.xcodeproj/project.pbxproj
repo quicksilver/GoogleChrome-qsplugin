@@ -58,7 +58,7 @@
 		E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeActions.m; sourceTree = "<group>"; };
 		E14F9687152EDF4600DBA105 /* QSGoogleChromeObjectSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeObjectSource.h; sourceTree = "<group>"; };
 		E14F9688152EDF4600DBA105 /* QSGoogleChromeObjectSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeObjectSource.m; sourceTree = "<group>"; };
-		E15A5AA4152B5742008A0CEA /* GoogleChrome.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GoogleChrome.bundle; path = GoogleChrome.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E15A5AA4152B5742008A0CEA /* GoogleChrome.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleChrome.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15A5AA7152B5742008A0CEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		E15A5AAD152B5742008A0CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -204,7 +204,7 @@
 			);
 			name = Configuration;
 			path = /tmp/QS/Configuration;
-			sourceTree = "<group>";
+			sourceTree = "<absolute>";
 		};
 		E15D7553154C276200CA71BF /* FMDB */ = {
 			isa = PBXGroup;
