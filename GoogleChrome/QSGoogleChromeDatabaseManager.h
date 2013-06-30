@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 stdin.se. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import "QSGoogleChromeDefinitions.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
