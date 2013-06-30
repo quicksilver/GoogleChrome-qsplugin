@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 stdin.se. All rights reserved.
 //
 
-#import <QSCore/QSCore.h>
 #import "JSONKit.h"
 #import "QSGoogleChromeDefinitions.h"
 

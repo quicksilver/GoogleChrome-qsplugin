@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 stdin.se. All rights reserved.
 //
 
-#import <QSCore/QSCore.h>
 #import "QSGoogleChromeDefinitions.h"
 #import "QSGoogleChromeBookmarksParser.h"
 #import "QSGoogleChromeHistoryParser.h"
