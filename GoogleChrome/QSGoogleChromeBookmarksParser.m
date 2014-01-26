@@ -49,9 +49,14 @@
 
             // Only add non-empty roots
             if ([bookmarkChildren count] > 0) {
-                [array addObject:[self createFolderObject:bookmark withBundle:bundle]];
-                if (deep) {
-                    [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep withBundle:bundle]];
+                QSObject *folder = [self createFolderObject:bookmark withBundle:bundle];
+
+                if (folder != nil) {
+                    [array addObject:folder];
+
+                    if (deep) {
+                        [array addObjectsFromArray:[self createObjectsForChildren:bookmark deep:deep withBundle:bundle]];
+                    }
                 }
             }
         }
@@ -65,9 +70,16 @@
  Creates a Quicksilver object for a bookmarks folder
  */
 - (QSObject *)createFolderObject:(NSDictionary *)bookmark withBundle:(NSString *)bundle {
-    QSObject *folder= [QSObject objectWithName:[bookmark objectForKey:@"name"]];
+    NSString *bookmarkName = [bookmark objectForKey:@"name"];
+    NSString *bookmarkId   = [bookmark objectForKey:@"id"];
+
+    if (bookmarkId == nil || bookmarkName == nil) {
+        return nil;
+    }
+
+    QSObject *folder = [QSObject objectWithName:bookmarkName];
     
-    [folder setIdentifier:[bookmark objectForKey:@"id"]];
+    [folder setIdentifier:bookmarkId];
     
     [folder setPrimaryType:kQSGoogleChromeBookmarkFolder];
     [folder setObject:bookmark forType:kQSGoogleChromeBookmarkFolder];
@@ -107,26 +119,34 @@
         type = [child objectForKey:@"type"];
         
         if ([type isEqualToString:@"folder"]) {
-            [children addObject:[self createFolderObject:child withBundle:bundle]];
-            if (deep) {
-                [children addObjectsFromArray:[self createObjectsForChildren:child deep:deep withBundle:bundle]];
+            QSObject *folder = [self createFolderObject:child withBundle:bundle];
+
+            if (folder != nil) {
+                [children addObject:folder];
+
+                if (deep) {
+                    [children addObjectsFromArray:[self createObjectsForChildren:child deep:deep withBundle:bundle]];
+                }
             }
         } else if ([type isEqualToString:@"url"]) {
             NSString *bookmarkName = [child objectForKey:@"name"];
+            NSString *bookmarkURL  = [child objectForKey:@"url"];
 
-            QSObject *bookmark = [QSObject
-                                  URLObjectWithURL:[child objectForKey:@"url"]
-                                  title:bookmarkName];
-            [bookmark setLabel:bookmarkName];
-            [bookmark setName:[NSString stringWithFormat:@"%@ in %@",
-                               bookmarkName,
-                               [bookmarkFolder objectForKey:@"name"]]];
+            if (bookmarkName != nil && bookmarkURL != nil) {
+                QSObject *bookmark = [QSObject
+                                      URLObjectWithURL:bookmarkURL
+                                      title:bookmarkName];
+                [bookmark setLabel:bookmarkName];
+                [bookmark setName:[NSString stringWithFormat:@"%@ in %@",
+                                   bookmarkName,
+                                   [bookmarkFolder objectForKey:@"name"]]];
 
-            if (bundle) {
-                [bookmark setObject:bundle forType:kQSGoogleChromeURL];
+                if (bundle) {
+                    [bookmark setObject:bundle forType:kQSGoogleChromeURL];
+                }
+
+                [children addObject:bookmark];
             }
-
-            [children addObject:bookmark];
         }
     }
     
