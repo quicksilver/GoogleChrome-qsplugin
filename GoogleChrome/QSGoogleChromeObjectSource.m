@@ -44,7 +44,7 @@
 - (BOOL) loadChildrenForObject:(QSObject *)object {
     NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
     
-    if ([[object primaryType] isEqualToString:NSFilenamesPboardType]) {
+    if ([[object primaryType] isEqualToString:QSFilePathType]) {
         // Open web pages
         [children addObject:[self createOpenPagesObject]];
         
