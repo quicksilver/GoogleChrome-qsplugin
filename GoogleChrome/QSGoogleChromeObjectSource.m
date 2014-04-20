@@ -176,8 +176,13 @@
         NSDictionary *folder = [object objectForType:kQSGoogleChromeBookmarkFolder];
         NSArray *children = [folder objectForKey:@"children"];
         
-        int nChildren = [children count];
-        return [NSString stringWithFormat:@"%d item%@", nChildren, ESS(nChildren)]; 
+        unsigned long nChildren = [children count];
+
+        if (nChildren == 1) {
+            return [NSString stringWithFormat:@"%lu item", nChildren];
+        } else {
+            return [NSString stringWithFormat:@"%lu items", nChildren];
+        }
     }
     
     return nil;
