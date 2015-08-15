@@ -59,9 +59,9 @@
  Converts a search engine url to a Quicksilver search url
  */
 - (NSString *)convertSearchEngineURL:(NSString *)url {
-    NSString *converted = [url stringByReplacing:@"{searchTerms}" with:@"***"];
-    converted = [converted stringByReplacing:@"{inputEncoding}" with:@"UTF-8"];
-    converted = [converted stringByReplacing:@"{google:baseURL}" with:@"http://www.google.com/"];
+    NSString *converted = [url stringByReplacingOccurrencesOfString:@"{searchTerms}" withString:@"***"];
+    converted = [converted stringByReplacingOccurrencesOfString:@"{inputEncoding}" withString:@"UTF-8"];
+    converted = [converted stringByReplacingOccurrencesOfString:@"{google:baseURL}" withString:@"http://www.google.com/"];
     return [converted stringByReplacingOccurrencesOfRegex:@"\\{.*?\\}" withString:@""];
 }
 

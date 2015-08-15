@@ -33,7 +33,7 @@
                                   bundle, @"bundle",
                                   currentTab, @"tab",
                                   currentWindow, @"window",
-                                  [NSNumber numberWithInt:[currentWindow activeTabIndex]], @"tabIndex",
+                                  [NSNumber numberWithInteger:[currentWindow activeTabIndex]], @"tabIndex",
                                   nil ]
                          forType:kQSGoogleChromeTab];
             
