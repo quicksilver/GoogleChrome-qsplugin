@@ -156,7 +156,7 @@
 - (BOOL)objectHasChildren:(QSObject *)object {
     NSString *type = [object primaryType];
     if ([type isEqualToString:kQSGoogleChromeOpenWebPages]) {
-        return QSAppIsRunning(kQSGoogleChromeBundle);
+        return QSAppIsRunning([object objectForMeta:@"bundle"]);
     }
     return YES;
 }
