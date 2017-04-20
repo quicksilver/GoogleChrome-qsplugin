@@ -7,8 +7,8 @@
 //
 
 #import "QSGoogleChromeDefinitions.h"
-#import "FMDatabase.h"
-#import "FMResultSet.h"
+
+@class FMDatabase;
 
 
 /*

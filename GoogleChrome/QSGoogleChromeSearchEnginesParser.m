@@ -7,6 +7,7 @@
 //
 
 #import "QSGoogleChromeSearchEnginesParser.h"
+#import <QSFoundation/FMDB.h>
 
 @implementation QSGoogleChromeSearchEnginesParser
 
@@ -62,7 +63,8 @@
     NSString *converted = [url stringByReplacingOccurrencesOfString:@"{searchTerms}" withString:@"***"];
     converted = [converted stringByReplacingOccurrencesOfString:@"{inputEncoding}" withString:@"UTF-8"];
     converted = [converted stringByReplacingOccurrencesOfString:@"{google:baseURL}" withString:@"http://www.google.com/"];
-    return [converted stringByReplacingOccurrencesOfRegex:@"\\{.*?\\}" withString:@""];
+	NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\{.*?\\}" options:0 error:NULL];
+	return [regex stringByReplacingMatchesInString:converted options:0 range:NSMakeRange(0, converted.length) withTemplate:@""];
 }
 
 

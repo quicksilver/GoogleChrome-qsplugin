@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 stdin.se. All rights reserved.
 //
 
-#import "RegexKitLite.h"
 #import "QSGoogleChromeDefinitions.h"
 #import "QSGoogleChromeDatabaseManager.h"
 
