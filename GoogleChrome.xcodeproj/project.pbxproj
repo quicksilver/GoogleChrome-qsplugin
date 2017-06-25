@@ -25,9 +25,6 @@
 		E15D7565154C276200CA71BF /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = E15D755D154C276200CA71BF /* sqlite3.c */; };
 		E15D7569154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E15D7568154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m */; };
 		E15D756C154C29C600CA71BF /* QSGoogleChromeHistoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E15D756B154C29C600CA71BF /* QSGoogleChromeHistoryParser.m */; };
-		E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = E161D1B315470C8C0045A22A /* CHANGELOG.md */; };
-		E161D1B815470C8C0045A22A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E161D1B515470C8C0045A22A /* JSONKit.m */; };
-		E161D1B915470C8C0045A22A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E161D1B615470C8C0045A22A /* README.md */; };
 		E161D1BD154868770045A22A /* QSGoogleChromeBookmarksParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */; };
 /* End PBXBuildFile section */
 
@@ -72,10 +69,6 @@
 		E15D7568154C27A300CA71BF /* QSGoogleChromeDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeDatabaseManager.m; sourceTree = "<group>"; };
 		E15D756A154C29C600CA71BF /* QSGoogleChromeHistoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeHistoryParser.h; sourceTree = "<group>"; };
 		E15D756B154C29C600CA71BF /* QSGoogleChromeHistoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeHistoryParser.m; sourceTree = "<group>"; };
-		E161D1B315470C8C0045A22A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		E161D1B415470C8C0045A22A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		E161D1B515470C8C0045A22A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		E161D1B615470C8C0045A22A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E161D1BB154868770045A22A /* QSGoogleChromeBookmarksParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeBookmarksParser.h; sourceTree = "<group>"; };
 		E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeBookmarksParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				E15A5AAB152B5742008A0CEA /* GoogleChrome */,
-				E161D1B215470C8C0045A22A /* JSONKit */,
 				E15D7553154C276200CA71BF /* FMDB */,
 				E15D755A154C276200CA71BF /* sqlite-amalgamation */,
 				E134374A15500CC900B7A533 /* RegexKit */,
@@ -215,17 +207,6 @@
 			path = "sqlite-amalgamation";
 			sourceTree = "<group>";
 		};
-		E161D1B215470C8C0045A22A /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				E161D1B315470C8C0045A22A /* CHANGELOG.md */,
-				E161D1B415470C8C0045A22A /* JSONKit.h */,
-				E161D1B515470C8C0045A22A /* JSONKit.m */,
-				E161D1B615470C8C0045A22A /* README.md */,
-			);
-			path = JSONKit;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,8 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */,
-				E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */,
-				E161D1B915470C8C0045A22A /* README.md in Resources */,
 				E109EA0F154D2A4800FDAC40 /* Chrome Folder.icns in Resources */,
 				E15D7563154C276200CA71BF /* Readme.mkdn in Resources */,
 				E134374E15500CC900B7A533 /* License.html in Resources */,
@@ -313,7 +292,6 @@
 				E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */,
 				E14F967F152ED50800DBA105 /* QSGoogleChromeActions.m in Sources */,
 				E14F9689152EDF4600DBA105 /* QSGoogleChromeObjectSource.m in Sources */,
-				E161D1B815470C8C0045A22A /* JSONKit.m in Sources */,
 				E161D1BD154868770045A22A /* QSGoogleChromeBookmarksParser.m in Sources */,
 				E15D7560154C276200CA71BF /* FMDatabase.m in Sources */,
 				E15D7561154C276200CA71BF /* FMDatabaseAdditions.m in Sources */,

@@ -34,8 +34,14 @@
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];
     
     NSData *jsonData = [NSData dataWithContentsOfFile:[path stringByStandardizingPath]];
-    NSDictionary *roots = [[jsonData objectFromJSONData] objectForKey:@"roots"];
-    
+	NSError *error = nil;
+	NSDictionary *bookmarks = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+	if (!bookmarks) {
+		NSLog(@"Error reading bookmarks: %@", error);
+		return array;
+	}
+	NSDictionary *roots = [bookmarks objectForKey:@"roots"];
+	
     NSString *key;
     NSDictionary *bookmark;
     NSArray *bookmarkChildren;
