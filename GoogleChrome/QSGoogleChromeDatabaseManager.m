@@ -7,30 +7,21 @@
 //
 
 #import "QSGoogleChromeDatabaseManager.h"
+#import <sqlite3.h>
 
 @implementation QSGoogleChromeDatabaseManager
 
 
-+(FMDatabase *)openDatabase:(NSString *)name {
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSString *tempFile = [NSTemporaryDirectory() stringByAppendingString:[name lastPathComponent]];
-    NSError *err;
-    
-    [manager removeItemAtPath:tempFile error:&err];
-    
-    if (![manager copyItemAtPath:name toPath:tempFile error:&err]) {
-        NSLog(@"Error while copying %@ to %@: %@", name, tempFile, err);
-        return nil;
-    }
-    
-    FMDatabase *db = [FMDatabase databaseWithPath:tempFile];
-    if (![db open]) {
-        NSLog(@"Could not open database %@", tempFile);
-        return nil;
-    }
-
-    return db;
++ (FMDatabase *)openDatabase:(NSString *)name {
+	NSString *tempFile = name;
+	
+	FMDatabase *db = [FMDatabase databaseWithPath:tempFile];
+	NSString *vfsFile = @"unix-none";
+	if (![db openWithFlags:SQLITE_OPEN_READONLY vfs:vfsFile]) {
+		NSLog(@"Could not open database %@: %@", tempFile, [db lastError]);
+		return nil;
+	}
+	return db;
 }
-
 
 @end
