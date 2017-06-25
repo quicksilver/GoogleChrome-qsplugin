@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4F065831F00045D00E89082 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F0657F1F00045D00E89082 /* FMDatabasePool.m */; };
+		D4F065841F00045D00E89082 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F065811F00045D00E89082 /* FMDatabaseQueue.m */; };
 		E109EA0F154D2A4800FDAC40 /* Chrome Folder.icns in Resources */ = {isa = PBXBuildFile; fileRef = E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */; };
 		E13437481550044000B7A533 /* QSGoogleChromeSearchEnginesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E13437471550044000B7A533 /* QSGoogleChromeSearchEnginesParser.m */; };
 		E14F967F152ED50800DBA105 /* QSGoogleChromeActions.m in Sources */ = {isa = PBXBuildFile; fileRef = E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */; };
@@ -28,6 +30,11 @@
 
 /* Begin PBXFileReference section */
 		D4F0657C1EFF5FA600E89082 /* GoogleChrome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleChrome.h; sourceTree = "<group>"; };
+		D4F0657E1F00045D00E89082 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		D4F0657F1F00045D00E89082 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		D4F065801F00045D00E89082 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		D4F065811F00045D00E89082 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		D4F065821F00045D00E89082 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Chrome Folder.icns"; sourceTree = "<group>"; };
 		E13437461550044000B7A533 /* QSGoogleChromeSearchEnginesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeSearchEnginesParser.h; sourceTree = "<group>"; };
 		E13437471550044000B7A533 /* QSGoogleChromeSearchEnginesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeSearchEnginesParser.m; sourceTree = "<group>"; };
@@ -169,8 +176,13 @@
 		E15D7553154C276200CA71BF /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
+				D4F065821F00045D00E89082 /* FMDB.h */,
 				E15D7554154C276200CA71BF /* FMDatabase.h */,
 				E15D7555154C276200CA71BF /* FMDatabase.m */,
+				D4F0657E1F00045D00E89082 /* FMDatabasePool.h */,
+				D4F0657F1F00045D00E89082 /* FMDatabasePool.m */,
+				D4F065801F00045D00E89082 /* FMDatabaseQueue.h */,
+				D4F065811F00045D00E89082 /* FMDatabaseQueue.m */,
 				E15D7556154C276200CA71BF /* FMDatabaseAdditions.h */,
 				E15D7557154C276200CA71BF /* FMDatabaseAdditions.m */,
 				E15D7558154C276200CA71BF /* FMResultSet.h */,
@@ -274,6 +286,8 @@
 			files = (
 				E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */,
 				E14F967F152ED50800DBA105 /* QSGoogleChromeActions.m in Sources */,
+				D4F065831F00045D00E89082 /* FMDatabasePool.m in Sources */,
+				D4F065841F00045D00E89082 /* FMDatabaseQueue.m in Sources */,
 				E14F9689152EDF4600DBA105 /* QSGoogleChromeObjectSource.m in Sources */,
 				E161D1BD154868770045A22A /* QSGoogleChromeBookmarksParser.m in Sources */,
 				E15D7560154C276200CA71BF /* FMDatabase.m in Sources */,
