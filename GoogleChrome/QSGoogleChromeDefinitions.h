@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 stdin.se. All rights reserved.
 //
 
-#import "Google Chrome.h"
+#import "GoogleChrome.h"
 
 #define kQSGoogleChromeBundle @"com.google.Chrome"
 #define kQSGoogleChromeCanaryBundle @"com.google.Chrome.canary"

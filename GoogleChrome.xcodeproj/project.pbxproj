@@ -16,8 +16,6 @@
 		E15A5AA8152B5742008A0CEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA7152B5742008A0CEA /* Cocoa.framework */; };
 		E15A5AAA152B5742008A0CEA /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15A5AA9152B5742008A0CEA /* ScriptingBridge.framework */; };
 		E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AAE152B5742008A0CEA /* InfoPlist.strings */; };
-		E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
-		E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */ = {isa = PBXBuildFile; fileRef = E15A5AD0152B74A1008A0CEA /* Google Chrome.app */; };
 		E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */ = {isa = PBXBuildFile; fileRef = E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */; };
 		E15D7560154C276200CA71BF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E15D7555154C276200CA71BF /* FMDatabase.m */; };
 		E15D7561154C276200CA71BF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E15D7557154C276200CA71BF /* FMDatabaseAdditions.m */; };
@@ -33,21 +31,8 @@
 		E161D1BD154868770045A22A /* QSGoogleChromeBookmarksParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E161D1BC154868770045A22A /* QSGoogleChromeBookmarksParser.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-		E15A5AD7152B7556008A0CEA /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*.app";
-			fileType = pattern.proxy;
-			isEditable = 1;
-			outputFiles = (
-				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
-			);
-			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXFileReference section */
+		D4F0657C1EFF5FA600E89082 /* GoogleChrome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleChrome.h; sourceTree = "<group>"; };
 		E109EA0E154D2A4800FDAC40 /* Chrome Folder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Chrome Folder.icns"; sourceTree = "<group>"; };
 		E13437461550044000B7A533 /* QSGoogleChromeSearchEnginesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeSearchEnginesParser.h; sourceTree = "<group>"; };
 		E13437471550044000B7A533 /* QSGoogleChromeSearchEnginesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeSearchEnginesParser.m; sourceTree = "<group>"; };
@@ -69,7 +54,6 @@
 		E15A5AB5152B5742008A0CEA /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
 		E15A5AB6152B5742008A0CEA /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
 		E15A5AB7152B5742008A0CEA /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		E15A5AD0152B74A1008A0CEA /* Google Chrome.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "Google Chrome.app"; path = "/Applications/Google Chrome.app"; sourceTree = "<absolute>"; };
 		E15A5AD8152B76A4008A0CEA /* QSGoogleChromeDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeDefinitions.h; sourceTree = "<group>"; };
 		E15A5AD9152B7932008A0CEA /* QSGoogleChromeProxies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSGoogleChromeProxies.h; sourceTree = "<group>"; };
 		E15A5ADA152B7932008A0CEA /* QSGoogleChromeProxies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSGoogleChromeProxies.m; sourceTree = "<group>"; };
@@ -130,7 +114,6 @@
 		E15A5A98152B5742008A0CEA = {
 			isa = PBXGroup;
 			children = (
-				E15A5AD0152B74A1008A0CEA /* Google Chrome.app */,
 				E15A5AAB152B5742008A0CEA /* GoogleChrome */,
 				E161D1B215470C8C0045A22A /* JSONKit */,
 				E15D7553154C276200CA71BF /* FMDB */,
@@ -164,6 +147,7 @@
 				E15A5AB1152B5742008A0CEA /* Configuration */,
 				E109EA0D154D2A4800FDAC40 /* Resources */,
 				E15A5AAC152B5742008A0CEA /* Supporting Files */,
+				D4F0657C1EFF5FA600E89082 /* GoogleChrome.h */,
 				E14F967D152ED50800DBA105 /* QSGoogleChromeActions.h */,
 				E14F967E152ED50800DBA105 /* QSGoogleChromeActions.m */,
 				E15A5AD8152B76A4008A0CEA /* QSGoogleChromeDefinitions.h */,
@@ -255,7 +239,6 @@
 				E15A5AA2152B5742008A0CEA /* ShellScript */,
 			);
 			buildRules = (
-				E15A5AD7152B7556008A0CEA /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -296,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E15A5AB0152B5742008A0CEA /* InfoPlist.strings in Resources */,
-				E15A5AD1152B74A1008A0CEA /* Google Chrome.app in Resources */,
 				E161D1B715470C8C0045A22A /* CHANGELOG.md in Resources */,
 				E161D1B915470C8C0045A22A /* README.md in Resources */,
 				E109EA0F154D2A4800FDAC40 /* Chrome Folder.icns in Resources */,
@@ -328,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E15A5AD5152B753A008A0CEA /* Google Chrome.app in Sources */,
 				E15A5ADC152B8212008A0CEA /* QSGoogleChromeProxies.m in Sources */,
 				E14F967F152ED50800DBA105 /* QSGoogleChromeActions.m in Sources */,
 				E14F9689152EDF4600DBA105 /* QSGoogleChromeObjectSource.m in Sources */,
