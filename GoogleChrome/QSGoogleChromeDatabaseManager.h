@@ -7,8 +7,7 @@
 //
 
 #import "QSGoogleChromeDefinitions.h"
-#import "FMDatabase.h"
-#import "FMResultSet.h"
+#import <QSFoundation/FMDB.h>
 
 
 /*

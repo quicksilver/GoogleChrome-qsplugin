@@ -518,5 +518,10 @@
 			<string>Chrome Folder.icns</string>
 		</dict>
 	</dict>
+	<key>QSRequirements</key>
+	<dict>
+		<key>version</key>
+		<string>4021</string>
+	</dict>
 </dict>
 </plist>
