@@ -183,8 +183,6 @@
 						<string>~/Library/Application Support/Google/Chrome/Default/History</string>
 						<key>skipItem</key>
 						<integer>1</integer>
-						<key>watchTarget</key>
-						<true/>
 						<key>sourceBundle</key>
 						<string>com.google.Chrome</string>
 					</dict>
@@ -289,8 +287,6 @@
 						<string>~/Library/Application Support/Google/Chrome Canary/Default/History</string>
 						<key>skipItem</key>
 						<integer>1</integer>
-						<key>watchTarget</key>
-						<true/>
 						<key>sourceBundle</key>
 						<string>com.google.Chrome.canary</string>
 					</dict>
