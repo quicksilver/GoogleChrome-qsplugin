@@ -157,7 +157,6 @@
 				E15A5A9F152B5742008A0CEA /* Sources */,
 				E15A5AA0152B5742008A0CEA /* Frameworks */,
 				E15A5AA1152B5742008A0CEA /* Resources */,
-				E15A5AA2152B5742008A0CEA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -176,12 +175,18 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = stdin.se;
+				TargetAttributes = {
+					E15A5AA3152B5742008A0CEA = {
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = E15A5A9D152B5742008A0CEA /* Build configuration list for PBXProject "GoogleChrome" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = E15A5A98152B5742008A0CEA;
@@ -205,22 +210,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		E15A5AA2152B5742008A0CEA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/GoogleChrome/bltrversion\" \"$INFOPLIST_FILE\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E15A5A9F152B5742008A0CEA /* Sources */ = {
