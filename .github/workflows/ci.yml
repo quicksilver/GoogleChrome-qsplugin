@@ -1,0 +1,18 @@
+name: build-and-sign
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: quicksilver/qs-plugin-action@v1
+        with:
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          SIGNING_IDENTITY: ${{ secrets.SIGNING_IDENTITY }}
+
+          QS_PUSH_PLUGIN_USER: ${{ secrets.QS_PUSH_PLUGIN_USER }}
+          QS_PUSH_PLUGIN_PASS: ${{ secrets.QS_PUSH_PLUGIN_PASS }}
